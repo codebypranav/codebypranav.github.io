@@ -22,8 +22,12 @@ jobs:
       - name: Build
         run: npm run build
         
+      - name: List output directory
+        run: ls -la out
+        
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
+          force_orphan: true
