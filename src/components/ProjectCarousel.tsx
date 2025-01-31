@@ -33,12 +33,14 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects }) => {
   return (
     <div className="relative w-full max-w-4xl mx-auto">
       <div className="overflow-hidden rounded-lg shadow-lg">
-        <div className="relative h-[400px]">
+        <div className="relative aspect-[16/9] w-full">
           <Image
             src={projects[currentIndex].image}
             alt={projects[currentIndex].title}
             fill
             className="object-cover"
+            sizes="(max-width: 896px) 100vw, 896px"
+            priority
           />
           <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
             <h2 className="text-2xl font-bold">{projects[currentIndex].title}</h2>

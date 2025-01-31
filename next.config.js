@@ -3,13 +3,11 @@ const nextConfig = {
   output: 'export',
   images: {
     unoptimized: true,
+    path: process.env.NODE_ENV === 'production' ? '/codebypranav.github.io' : '',
   },
-  basePath: '/codebypranav.github.io',
-  assetPrefix: '/codebypranav.github.io/',
-  webpack: (config) => {
-    config.resolve.fallback = { fs: false };
-    return config;
-  },
+  basePath: process.env.NODE_ENV === 'production' ? '/codebypranav.github.io' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/codebypranav.github.io' : '',
+  trailingSlash: true,
 }
 
 module.exports = nextConfig
