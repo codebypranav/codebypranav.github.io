@@ -2,20 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-image: url('/broadmuseum.JPG');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: #171717;
+}
+
+.content-wrapper {
+  background-color: rgba(255, 255, 255, 0.9);
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+nav {
+  background-color: rgba(31, 41, 55, 0.95) !important;
 }
