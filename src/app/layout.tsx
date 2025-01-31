@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Pranav Shukla - Portfolio",
   description: "Personal portfolio and projects by Pranav Shukla",
+  icons: {
+    icon: '/codebypranav.github.io/favicon.ico',
+  },
 };
 
 export default function RootLayout({
