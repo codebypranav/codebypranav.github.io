@@ -15,13 +15,13 @@ export default function Home() {
       title: "Resume",
       description: "My professional resume built with LaTeX",
       link: "https://github.com/codebypranav/Resume",
-      image: "/resume-preview.jpg"
+      image: "/codebypranav.github.io/resume-preview.jpg"
     },
     {
       title: "AirFleet",
       description: "AI-enabled pilot logbook for real-life operations and sim flights",
       link: "https://github.com/codebypranav/AirFleet",
-      image: "/airfleet-preview.jpg"
+      image: "/codebypranav.github.io/airfleet-preview.jpg"
     }
   ];
 
@@ -32,7 +32,7 @@ export default function Home() {
         <div className="flex flex-col md:flex-row gap-8 mb-16 items-center md:items-start">
           <div className="w-64 h-64 relative flex-shrink-0">
             <Image
-              src="/personal_photo.png"
+              src="/codebypranav.github.io/personal_photo.png"
               alt="Pranav Shukla"
               fill
               className="object-cover rounded-lg shadow-lg"

@@ -8,4 +8,4 @@ const nextConfig = {
   assetPrefix: '/codebypranav.github.io/',
 }
 
-module.exports = nextConfig 
+module.exports = nextConfig
