@@ -6,6 +6,10 @@ const nextConfig = {
   },
   basePath: '/codebypranav.github.io',
   assetPrefix: '/codebypranav.github.io/',
+  webpack: (config) => {
+    config.resolve.fallback = { fs: false };
+    return config;
+  },
 }
 
 module.exports = nextConfig
