@@ -13,13 +13,13 @@ export default function Home() {
   const projects: Project[] = [
     {
       title: "Resume",
-      description: "My professional resume built with LaTeX",
+      description: "My professional resume built with Word.",
       link: "https://github.com/codebypranav/Resume",
       image: "/resume-preview.png"
     },
     {
       title: "AirFleet",
-      description: "AI-enabled pilot logbook for real-life operations and sim flights",
+      description: "AI-enabled pilot logbook for real-life operations and sim flights.",
       link: "https://github.com/codebypranav/AirFleet",
       image: "/airfleet-preview.jpg"
     }

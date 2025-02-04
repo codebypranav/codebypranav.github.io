@@ -32,20 +32,17 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects }) => {
 
   return (
     <div className="relative max-w-4xl mx-auto bg-white rounded-lg shadow-lg">
-      <div className="h-[600px] relative p-4">
-        <div className="absolute inset-0 flex items-center justify-center p-4">
-          <div className="relative w-full h-full">
-            <Image
-              src={projects[currentIndex].image}
-              alt={projects[currentIndex].title}
-              width={1200}
-              height={675}
-              className="mx-auto h-[500px] w-auto object-contain"
-              priority
-            />
-          </div>
+      <div className="aspect-[16/9] relative">
+        <div className="absolute inset-0">
+          <Image
+            src={projects[currentIndex].image}
+            alt={projects[currentIndex].title}
+            fill
+            className="rounded-t-lg object-cover"
+            priority
+          />
         </div>
-        <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4 rounded-b-lg">
+        <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
           <h2 className="text-2xl font-bold">{projects[currentIndex].title}</h2>
           <p className="mt-2">{projects[currentIndex].description}</p>
           <Link 
