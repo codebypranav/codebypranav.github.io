@@ -15,7 +15,7 @@ export default function Home() {
       title: "Resume",
       description: "My professional resume built with LaTeX",
       link: "https://github.com/codebypranav/Resume",
-      image: "/resume-preview.jpg"
+      image: "/resume-preview.png"
     },
     {
       title: "AirFleet",
