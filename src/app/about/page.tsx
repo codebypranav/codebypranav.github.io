@@ -10,7 +10,7 @@ export default function About() {
           {/* Personal Introduction */}
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">Introduction</h2>
-            <p>My friends know me as the record-keeper and dad of my group, and my sister knows me as a trouble-maker, but we can get to know each other as professionals. I like to think of myself as someone who manages to keep a light heart while also producing results.</p>
+            <p>My friends know me for my photography, and my sister knows me as a trouble-maker, but we can get to know each other as professionals. I like to think of myself as someone who manages to keep a light heart while also producing results.</p>
           </section>
 
           {/* Skills */}
