@@ -45,7 +45,7 @@ export default function Home() {
               Hello, my name is Pranav Shukla. I&apos;m a recent graduate of Michigan State University, with a Bachelors of Science in Computer Science. I have extensive experience interning at Vanguard as a Software Engineering Intern, where I did full-stack and cloud development. Some technologies I know include Python, Django, Next.js, React, AWS, and Docker.
             </p>
             <p className="text-lg leading-relaxed mt-4">
-              Outside of work, I enjoy photography, playing Minecraft, running, hiking, reading, and eating chocolate.
+              Outside of work, I enjoy photography, playing Minecraft, running, listening to music, hiking, reading, and eating chocolate.
             </p>
             <p className="text-lg leading-relaxed mt-4">
               If you would like to get to know me better, or want to reach out to work with me, please email me at{' '}
