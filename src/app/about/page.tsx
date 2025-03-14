@@ -31,6 +31,10 @@ export default function About() {
                 <span className="inline-block w-2 h-2 bg-white"></span>
                 <span className="font-semibold">Machine Learning</span>
               </li>
+              <li className="flex items-center gap-2">
+                <span className="inline-block w-2 h-2 bg-white"></span>
+                <span className="font-semibold">DevOps/Site Reliability Engineering</span>
+              </li>
             </ul>
             <p className="mt-4 text-lg">Proficient in Python, JavaScript/TypeScript, C++, and SQL, I have built scalable applications using React, Django, Flask, and AWS. My expertise extends to working with PostgreSQL, Docker, TensorFlow, and Linux as well.</p>
           </section>

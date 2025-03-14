@@ -43,11 +43,11 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects }) => {
           />
         </div>
         <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-80 text-white p-6 border-t border-white/30">
-          <h2 className="text-2xl font-bold uppercase tracking-wider">{projects[currentIndex].title}</h2>
+          <h2 className="text-2xl font-bold">{projects[currentIndex].title}</h2>
           <p className="mt-2 text-gray-300">{projects[currentIndex].description}</p>
           <Link 
             href={projects[currentIndex].link}
-            className="inline-block mt-4 px-6 py-2 border border-white/50 text-white rounded hover:bg-white/10 transition-colors uppercase tracking-wider font-semibold"
+            className="inline-block mt-4 px-6 py-2 border border-white/50 text-white rounded hover:bg-white/10 transition-colors font-semibold"
             target="_blank"
           >
             View Project

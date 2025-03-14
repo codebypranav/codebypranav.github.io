@@ -9,16 +9,16 @@ const Navigation = () => {
   return (
     <nav className="text-white p-4">
       <div className="max-w-6xl mx-auto flex justify-between items-center">
-        <Link href="/" className="text-xl font-bold tracking-wider">
-          PRANAV SHUKLA
+        <Link href="/" className="text-xl font-bold">
+          Pranav Shukla
         </Link>
         
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-6">
-          <Link href="/" className="hover:text-gray-300 transition-colors uppercase tracking-wide">
+          <Link href="/" className="hover:text-gray-300 transition-colors">
             Home
           </Link>
-          <Link href="/about" className="hover:text-gray-300 transition-colors uppercase tracking-wide">
+          <Link href="/about" className="hover:text-gray-300 transition-colors">
             About Me
           </Link>
         </div>
@@ -38,14 +38,14 @@ const Navigation = () => {
             <div className="dropdown-content">
               <Link 
                 href="/" 
-                className="hover:text-gray-300 transition-colors uppercase tracking-wide"
+                className="hover:text-gray-300 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
               </Link>
               <Link 
                 href="/about" 
-                className="hover:text-gray-300 transition-colors uppercase tracking-wide"
+                className="hover:text-gray-300 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 About Me

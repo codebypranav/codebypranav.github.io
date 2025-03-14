@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PRANAV SHUKLA",
+  title: "Pranav Shukla",
   description: "Personal portfolio and projects by Pranav Shukla",
 };
 

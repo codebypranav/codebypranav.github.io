@@ -12,13 +12,13 @@ interface Project {
 export default function Home() {
   const projects: Project[] = [
     {
-      title: "RESUME",
+      title: "Resume",
       description: "My professional resume built with Word.",
       link: "https://github.com/codebypranav/Resume",
       image: "/resume-preview.png"
     },
     {
-      title: "AIRFLEET",
+      title: "AirFleet",
       description: "AI-enabled pilot logbook for real-life operations and sim flights.",
       link: "https://github.com/codebypranav/AirFleet",
       image: "/airfleet-preview.jpg"
@@ -41,7 +41,7 @@ export default function Home() {
             />
           </div>
           <div className="flex-grow">
-            <h1 className="text-3xl font-bold uppercase tracking-wider mb-4 border-b border-white/30 pb-2">PRANAV SHUKLA</h1>
+            <h1 className="text-3xl font-bold mb-4 border-b border-white/30 pb-2">Pranav Shukla</h1>
             <p className="text-lg leading-relaxed">
               Hello, I&apos;m a recent graduate of Michigan State University, with a Bachelors of Science in Computer Science. I have extensive experience interning at Vanguard as a Software Engineering Intern, where I did full-stack and cloud development. Some technologies I know include <span className="font-bold">Python</span>, <span className="font-bold">Django</span>, <span className="font-bold">Next.js</span>, <span className="font-bold">React</span>, <span className="font-bold">AWS</span>, and <span className="font-bold">Docker</span>.
             </p>
@@ -69,7 +69,7 @@ export default function Home() {
         </div>
 
         {/* Projects Section */}
-        <h2 className="text-4xl font-bold mb-8 text-center uppercase tracking-widest border-b border-white/30 pb-2">PROJECTS</h2>
+        <h2 className="text-4xl font-bold mb-8 text-center border-b border-white/30 pb-2">Projects</h2>
         <ProjectCarousel projects={projects} />
       </div>
     </main>
