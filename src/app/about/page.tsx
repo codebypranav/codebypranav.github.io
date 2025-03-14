@@ -5,31 +5,31 @@ export default function About() {
   return (
     <main className="min-h-screen p-8">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-8 uppercase tracking-widest border-b border-white/30 pb-2 text-center">ABOUT ME</h1>
+        <h1 className="text-4xl font-bold mb-8 border-b border-white/30 pb-2 text-center">About Me</h1>
         
         <div className="text-white space-y-10">
           {/* Personal Introduction */}
           <section className="border border-white/20 p-6 bg-black/50">
-            <h2 className="text-2xl font-bold uppercase mb-4 tracking-wider border-b border-white/20 pb-2">INTRODUCTION</h2>
+            <h2 className="text-2xl font-bold mb-4 border-b border-white/20 pb-2">Introduction</h2>
             <p className="text-lg">My friends know me for my photography, and my sister knows me as a troublemaker, but we can get to know each other as professionals. I like to think of myself as someone who manages to keep a light heart while also producing results.</p>
           </section>
 
           {/* Skills */}
           <section className="border border-white/20 p-6 bg-black/50">
-            <h2 className="text-2xl font-bold uppercase mb-4 tracking-wider border-b border-white/20 pb-2">SKILLS</h2>
+            <h2 className="text-2xl font-bold mb-4 border-b border-white/20 pb-2">Skills</h2>
             <p className="text-lg">With a strong foundation in computer science and experience in software engineering, I specialize in:</p>
             <ul className="list-none mt-4 space-y-2">
               <li className="flex items-center gap-2">
                 <span className="inline-block w-2 h-2 bg-white"></span>
-                <span className="font-semibold">FULL STACK DEVELOPMENT</span>
+                <span className="font-semibold">Full Stack Development</span>
               </li>
               <li className="flex items-center gap-2">
                 <span className="inline-block w-2 h-2 bg-white"></span>
-                <span className="font-semibold">CLOUD COMPUTING</span>
+                <span className="font-semibold">Cloud Computing</span>
               </li>
               <li className="flex items-center gap-2">
                 <span className="inline-block w-2 h-2 bg-white"></span>
-                <span className="font-semibold">MACHINE LEARNING</span>
+                <span className="font-semibold">Machine Learning</span>
               </li>
             </ul>
             <p className="mt-4 text-lg">Proficient in Python, JavaScript/TypeScript, C++, and SQL, I have built scalable applications using React, Django, Flask, and AWS. My expertise extends to working with PostgreSQL, Docker, TensorFlow, and Linux as well.</p>
@@ -37,18 +37,18 @@ export default function About() {
 
           {/* Experience */}
           <section className="border border-white/20 p-6 bg-black/50">
-            <h2 className="text-2xl font-bold uppercase mb-4 tracking-wider border-b border-white/20 pb-2">EXPERIENCE</h2>
+            <h2 className="text-2xl font-bold mb-4 border-b border-white/20 pb-2">Experience</h2>
             <div className="space-y-4 text-lg">
-              <p className="font-bold">THE VANGUARD GROUP</p>
+              <p className="font-bold">The Vanguard Group</p>
               <p>I have gained software engineering experience through multiple internships at The Vanguard Group, where I developed cloud-hosted trading applications, optimized financial calculations, and improved user interfaces.</p>
-              <p className="font-bold mt-4">RESEARCH PROJECTS</p>
+              <p className="font-bold mt-4">Research Projects</p>
               <p>I have contributed to research-driven projects, such as the Henry Ford Health Research Synergy Vanguard Portal, where I built searchable databases and API integrations to support interdisciplinary collaboration.</p>
             </div>
           </section>
 
           {/* Education */}
           <section className="border border-white/20 p-6 bg-black/50">
-            <h2 className="text-2xl font-bold uppercase mb-4 tracking-wider border-b border-white/20 pb-2">EDUCATION</h2>
+            <h2 className="text-2xl font-bold mb-4 border-b border-white/20 pb-2">Education</h2>
             <div className="flex items-center gap-4 text-lg">
               <div className="font-bold text-xl">MSU</div>
               <div>
@@ -60,13 +60,13 @@ export default function About() {
 
           {/* Contact Information */}
           <section className="border border-white/20 p-6 bg-black/50">
-            <h2 className="text-2xl font-bold uppercase mb-4 tracking-wider border-b border-white/20 pb-2">CONTACT</h2>
+            <h2 className="text-2xl font-bold mb-4 border-b border-white/20 pb-2">Contact</h2>
             <div className="flex flex-col gap-4 text-lg">
               <a 
                 href="mailto:pranavshuklajobs@gmail.com" 
                 className="inline-flex items-center gap-3 text-white hover:text-gray-300 transition-colors"
               >
-                <Image src="/mail-icon.png" alt="Email" width={24} height={24} className="invert" />
+                <Image src="/mail-icon.png" alt="Email" width={24} height={24} className="brightness-0 invert" />
                 <span>pranavshuklajobs@gmail.com</span>
               </a>
               <Link 
@@ -74,7 +74,7 @@ export default function About() {
                 className="inline-flex items-center gap-3 text-white hover:text-gray-300 transition-colors"
                 target="_blank"
               >
-                <Image src="/linkedin-icon.png" alt="LinkedIn" width={24} height={24} className="invert" />
+                <Image src="/linkedin-icon.png" alt="LinkedIn" width={24} height={24} className="brightness-0 invert" />
                 <span>linkedin.com/in/pranavshuklafts</span>
               </Link>
               <Link 

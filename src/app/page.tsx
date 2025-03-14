@@ -36,7 +36,7 @@ export default function Home() {
               alt="Pranav Shukla"
               width={256}
               height={256}
-              className="object-cover rounded-lg shadow-lg border border-white/30"
+              className="object-cover rounded-lg shadow-lg border border-white/30 profile-image"
               priority
             />
           </div>
@@ -53,7 +53,7 @@ export default function Home() {
                 href="mailto:pranavshuklajobs@gmail.com" 
                 className="inline-flex items-center gap-2 text-white hover:text-gray-300 transition-colors border border-white/30 px-4 py-2 rounded"
               >
-                <Image src="/mail-icon.png" alt="Email" width={20} height={20} className="invert" />
+                <Image src="/mail-icon.png" alt="Email" width={20} height={20} className="brightness-0 invert" />
                 <span>pranavshuklajobs@gmail.com</span>
               </a>
               <Link 
@@ -61,7 +61,7 @@ export default function Home() {
                 className="inline-flex items-center gap-2 text-white hover:text-gray-300 transition-colors border border-white/30 px-4 py-2 rounded"
                 target="_blank"
               >
-                <Image src="/linkedin-icon.png" alt="LinkedIn" width={20} height={20} className="invert" />
+                <Image src="/linkedin-icon.png" alt="LinkedIn" width={20} height={20} className="brightness-0 invert" />
                 <span>linkedin.com/in/pranavshuklafts</span>
               </Link>
             </div>
