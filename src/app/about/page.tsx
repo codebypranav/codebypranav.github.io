@@ -10,19 +10,19 @@ export default function About() {
           {/* Personal Introduction */}
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">Introduction</h2>
-            <p>My friends know me for my photography, and my sister knows me as a trouble-maker, but we can get to know each other as professionals. I like to think of myself as someone who manages to keep a light heart while also producing results.</p>
+            <p>My friends know me for my photography, and my sister knows me as a troublemaker, but we can get to know each other as professionals. I like to think of myself as someone who manages to keep a light heart while also producing results.</p>
           </section>
 
           {/* Skills */}
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">Skills</h2>
-            <p>With a strong foundation in computer science and hands-on experience in software engineering, I specialize in full-stack development, cloud computing, and data analysis. Proficient in Python, JavaScript/TypeScript, C++, and SQL, I have built scalable applications using React, Django, Flask, and AWS. My expertise extends to working with PostgreSQL, Docker, TensorFlow, and Linux as well.</p>
+            <p>With a strong foundation in computer science and experience in software engineering, I specialize in full stack development, cloud computing, and machine learning. Proficient in Python, JavaScript/TypeScript, C++, and SQL, I have built scalable applications using React, Django, Flask, and AWS. My expertise extends to working with PostgreSQL, Docker, TensorFlow, and Linux as well.</p>
           </section>
 
           {/* Experience */}
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">Experience</h2>
-            <p>I have gained extensive software engineering experience through multiple internships at The Vanguard Group, where I developed cloud-based trading applications, optimized financial calculations, and improved user interfaces. Additionally, I have contributed to research-driven projects, such as the Henry Ford Health Research Synergy Vanguard Portal, where I built searchable databases and API integrations to support interdisciplinary collaboration. My experience in full-stack development, cloud computing, and data analytics allows me to build scalable, efficient, and impactful software solutions.</p>
+            <p>I have gained software engineering experience through multiple internships at The Vanguard Group, where I developed cloud-hosted trading applications, optimized financial calculations, and improved user interfaces. Additionally, I have contributed to research-driven projects, such as the Henry Ford Health Research Synergy Vanguard Portal, where I built searchable databases and API integrations to support interdisciplinary collaboration. My experience in full-stack development, cloud computing, and data analytics allows me to build scalable, efficient, and impactful software solutions.</p>
           </section>
 
           {/* Education */}
