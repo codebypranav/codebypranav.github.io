@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Pranav Shukla - Portfolio",
+  title: "PRANAV SHUKLA",
   description: "Personal portfolio and projects by Pranav Shukla",
 };
 
@@ -28,7 +28,9 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <div className="content-wrapper">
           <Navigation />
-          {children}
+          <main className="text-white">
+            {children}
+          </main>
         </div>
       </body>
     </html>
