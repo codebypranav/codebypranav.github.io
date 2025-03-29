@@ -46,7 +46,7 @@ export default function Home() {
               Hello, I&apos;m a recent graduate of Michigan State University, with a Bachelors of Science in Computer Science. I have extensive experience interning at Vanguard as a Software Engineering Intern, where I did full-stack and cloud development. Some technologies I know include <span className="font-bold">Python</span>, <span className="font-bold">Django</span>, <span className="font-bold">Next.js</span>, <span className="font-bold">React</span>, <span className="font-bold">AWS</span>, and <span className="font-bold">Docker</span>.
             </p>
             <p className="text-lg leading-relaxed mt-4">
-              Outside of work, I enjoy photography, playing Minecraft, cooking, [mountain] biking, studying military technology, exploring new cities and their food, running, listening to music, hiking, reading, and eating chocolate.
+              Outside of work, I enjoy photography, playing Minecraft, cooking, [mountain] biking, studying military technology, aviation, exploring new cities/nature, checking out eateries, running, keeping up with Formula 1, listening to music, traveling, learning German/French/Hindi, hiking, reading, and most of all, eating chocolate.
             </p>
             <div className="mt-6 flex flex-col sm:flex-row gap-4">
               <a 
