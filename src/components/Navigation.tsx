@@ -12,10 +12,6 @@ const Navigation = () => {
         <Link href="/" className="text-xl font-bold">
           Pranav Shukla
         </Link>
-
-        <div>
-          A day without chocolate is like... haha just kidding! I have no idea.
-        </div>
         
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-6">
