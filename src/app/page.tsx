@@ -54,10 +54,10 @@ export default function Home() {
           <div className="intro-content animate-on-load animate-stagger-2">
             <h1 className="intro-title">Pranav Shukla</h1>
             <p className="intro-text">
-              Hello, I&apos;m a recent graduate of Michigan State University, with a Bachelors of Science in Computer Science. I have extensive experience interning at Vanguard as a Software Engineering Intern, where I did full-stack and cloud development. Some technologies I know include <span className="intro-text-bold">Python</span>, <span className="intro-text-bold">Django</span>, <span className="intro-text-bold">Next.js</span>, <span className="intro-text-bold">React</span>, <span className="intro-text-bold">AWS</span>, and <span className="intro-text-bold">Docker</span>.
+              Hello, I&apos;m a recent graduate of Michigan State University, with a Bachelors of Science in Computer Science. I have experience as a manufacturing software engineer at Ford Motor Company, and at Vanguard as a Software Engineering Intern, where I did full-stack and cloud development. Some technologies I know include <span className="intro-text-bold">Python</span>, <span className="intro-text-bold">JavaScript/TypeScript</span>, <span className="intro-text-bold">SQL</span>, <span className="intro-text-bold">GCP</span>, <span className="intro-text-bold">AWS</span>, and <span className="intro-text-bold">Docker</span>.
             </p>
             <p className="intro-text intro-text-margin">
-              Outside of work, I enjoy photography, cooking, mountain biking, aviation, trains, exploring new cities/nature, checking out eateries, running, keeping up with Formula 1, listening to music, traveling, learning German/French/Hindi, hiking, reading, and most of all, eating chocolate.
+              Outside of work, I enjoy exploring new technologies, trying new activities, running, watching Formula 1, hanging out with my friends, and eating chocolate.
             </p>
             <div className="contact-links animate-on-load animate-stagger-3">
               <a 
@@ -113,7 +113,7 @@ export default function Home() {
                 <span className="about-list-text">Machine Learning</span>
               </li>
             </ul>
-            <p className="about-text">Proficient in Python, JavaScript/TypeScript, C++, and SQL, I have built scalable applications using React, Django, Flask, and AWS. My expertise extends to working with PostgreSQL, Docker, TensorFlow, and Linux as well.</p>
+            <p className="about-text">Proficient in Python, JavaScript/TypeScript, AWS, and SQL, I have built scalable applications that use frameworks like React and Flask, and tools such as Pinecone and Docker.</p>
           </div>
 
           {/* Experience */}
@@ -123,6 +123,8 @@ export default function Home() {
           >
             <h3 className="about-subtitle">Experience</h3>
             <div className="about-experience">
+              <p className="about-company">Ford Motor Company</p>
+              <p className="about-text">As a Manufacturing Software Engineer Intern at Ford, I developed and maintained applications that support manufacturing operations, focusing on improving efficiency and reliability.</p>
               <p className="about-company">The Vanguard Group</p>
               <p className="about-text">I have gained software engineering experience through multiple internships at The Vanguard Group, where I developed cloud-hosted trading applications, optimized financial calculations, and improved user interfaces.</p>
               <p className="about-company">Henry Ford Health Research Synergy Vanguard Portal</p>
@@ -140,7 +142,7 @@ export default function Home() {
               <div className="about-school">MSU</div>
               <div>
                 <p className="about-text">Bachelor of Science in Computer Science</p>
-                <p className="about-degree">Michigan State University, 2024</p>
+                <p className="about-degree">Michigan State University, December 2024</p>
               </div>
             </div>
           </div>
