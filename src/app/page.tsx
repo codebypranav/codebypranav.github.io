@@ -124,7 +124,7 @@ export default function Home() {
             <h3 className="about-subtitle">Experience</h3>
             <div className="about-experience">
               <p className="about-company">Ford Motor Company</p>
-              <p className="about-text">As a Manufacturing Software Engineer Intern at Ford, I developed and maintained applications that support manufacturing operations, focusing on improving efficiency and reliability.</p>
+              <p className="about-text">As a Manufacturing Software Engineer at Ford, I develop and maintain applications that support manufacturing operations, focusing on improving efficiency and reliability.</p>
               <p className="about-company">The Vanguard Group</p>
               <p className="about-text">I have gained software engineering experience through multiple internships at The Vanguard Group, where I developed cloud-hosted trading applications, optimized financial calculations, and improved user interfaces.</p>
               <p className="about-company">Henry Ford Health Research Synergy Vanguard Portal</p>
