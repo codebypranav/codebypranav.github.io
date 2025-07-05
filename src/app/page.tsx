@@ -145,6 +145,13 @@ export default function Home() {
                 <p className="about-degree">Michigan State University, December 2024</p>
               </div>
             </div>
+            <div className="about-education">
+              <div className="about-school">IAC</div>
+              <div>
+                <p className="about-text">International Baccalaureate Diploma</p>
+                <p className="about-degree">International Academy - Okma/Central, May 2020</p>
+              </div>
+            </div>
           </div>
         </section>
 
