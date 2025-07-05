@@ -148,8 +148,7 @@ export default function Home() {
             <div className="about-education">
               <div className="about-school">IAC</div>
               <div>
-                <p className="about-text">International Baccalaureate Diploma</p>
-                <p className="about-text">High School Diploma</p>
+                <p className="about-text">International Baccalaureate Diploma/High School Diploma</p>
                 <p className="about-degree">International Academy - Central/Okma, May 2020</p>
               </div>
             </div>
