@@ -31,23 +31,23 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects }) => {
   };
 
   return (
-    <div className="relative max-w-4xl mx-auto border border-white/30 rounded-lg">
-      <div className="aspect-[16/9] relative">
-        <div className="absolute inset-0">
+    <div className="carousel-container">
+      <div className="carousel-aspect">
+        <div className="carousel-image-container">
           <Image
             src={projects[currentIndex].image}
             alt={projects[currentIndex].title}
             fill
-            className="rounded-t-lg object-cover grayscale"
+            className="carousel-image"
             priority
           />
         </div>
-        <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-80 text-white p-6 border-t border-white/30">
-          <h2 className="text-2xl font-bold">{projects[currentIndex].title}</h2>
-          <p className="mt-2 text-gray-300">{projects[currentIndex].description}</p>
+        <div className="carousel-overlay">
+          <h2 className="carousel-title">{projects[currentIndex].title}</h2>
+          <p className="carousel-description">{projects[currentIndex].description}</p>
           <Link 
             href={projects[currentIndex].link}
-            className="inline-block mt-4 px-6 py-2 border border-white/50 text-white rounded hover:bg-white/10 transition-colors font-semibold"
+            className="carousel-link"
             target="_blank"
           >
             View Project
@@ -57,24 +57,24 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects }) => {
       
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black bg-opacity-70 text-white p-3 border border-white/30 z-10 hover:bg-opacity-90 transition-all font-bold"
+        className="carousel-button prev"
       >
         ←
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black bg-opacity-70 text-white p-3 border border-white/30 z-10 hover:bg-opacity-90 transition-all font-bold"
+        className="carousel-button next"
       >
         →
       </button>
 
       {/* Indicator dots */}
-      <div className="absolute bottom-28 left-0 right-0 flex justify-center gap-2">
+      <div className="carousel-indicators">
         {projects.map((_, index) => (
           <button 
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className={`w-3 h-3 border border-white/50 ${index === currentIndex ? 'bg-white' : 'bg-transparent'}`}
+            className={`carousel-indicator ${index === currentIndex ? 'active' : ''}`}
           />
         ))}
       </div>

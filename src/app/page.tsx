@@ -1,6 +1,10 @@
+'use client';
+
 import Image from 'next/image';
 import ProjectCarousel from '@/components/ProjectCarousel';
 import Link from 'next/link';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import './components.css';
 
 interface Project {
   title: string;
@@ -10,6 +14,13 @@ interface Project {
 }
 
 export default function Home() {
+  const { elementRef: introRef, isVisible: introVisible } = useScrollAnimation();
+  const { elementRef: skillsRef, isVisible: skillsVisible } = useScrollAnimation();
+  const { elementRef: experienceRef, isVisible: experienceVisible } = useScrollAnimation();
+  const { elementRef: educationRef, isVisible: educationVisible } = useScrollAnimation();
+  const { elementRef: projectsRef, isVisible: projectsVisible } = useScrollAnimation();
+  const { elementRef: contactRef, isVisible: contactVisible } = useScrollAnimation();
+
   const projects: Project[] = [
     {
       title: "Resume",
@@ -26,51 +37,162 @@ export default function Home() {
   ];
 
   return (
-    <main className="min-h-screen p-8">
-      <div className="max-w-6xl mx-auto">
+    <main className="main-container">
+      <div className="main-inner">
         {/* Introduction Section */}
-        <div className="flex flex-col md:flex-row gap-8 mb-16 items-center md:items-start">
-          <div className="w-64 h-64 relative flex-shrink-0">
+        <section id="home" className="intro-section animate-on-load">
+          <div className="profile-image-container animate-on-load animate-stagger-1">
             <Image
               src="/personal_photo.png"
               alt="Pranav Shukla"
               width={256}
               height={256}
-              className="object-cover rounded-lg shadow-lg border border-white/30 profile-image"
+              className="profile-image"
               priority
             />
           </div>
-          <div className="flex-grow">
-            <h1 className="text-3xl font-bold mb-4 border-b border-white/30 pb-2">Pranav Shukla</h1>
-            <p className="text-lg leading-relaxed">
-              Hello, I&apos;m a recent graduate of Michigan State University, with a Bachelors of Science in Computer Science. I have extensive experience interning at Vanguard as a Software Engineering Intern, where I did full-stack and cloud development. Some technologies I know include <span className="font-bold">Python</span>, <span className="font-bold">Django</span>, <span className="font-bold">Next.js</span>, <span className="font-bold">React</span>, <span className="font-bold">AWS</span>, and <span className="font-bold">Docker</span>.
+          <div className="intro-content animate-on-load animate-stagger-2">
+            <h1 className="intro-title">Pranav Shukla</h1>
+            <p className="intro-text">
+              Hello, I&apos;m a recent graduate of Michigan State University, with a Bachelors of Science in Computer Science. I have extensive experience interning at Vanguard as a Software Engineering Intern, where I did full-stack and cloud development. Some technologies I know include <span className="intro-text-bold">Python</span>, <span className="intro-text-bold">Django</span>, <span className="intro-text-bold">Next.js</span>, <span className="intro-text-bold">React</span>, <span className="intro-text-bold">AWS</span>, and <span className="intro-text-bold">Docker</span>.
             </p>
-            <p className="text-lg leading-relaxed mt-4">
-              Outside of work, I enjoy photography, playing Minecraft, cooking, [mountain] biking, studying military technology, aviation, exploring new cities/nature, checking out eateries, running, keeping up with Formula 1, listening to music, traveling, learning German/French/Hindi, hiking, reading, and most of all, eating chocolate.
+            <p className="intro-text intro-text-margin">
+              Outside of work, I enjoy photography, cooking, mountain biking, aviation, trains, exploring new cities/nature, checking out eateries, running, keeping up with Formula 1, listening to music, traveling, learning German/French/Hindi, hiking, reading, and most of all, eating chocolate.
             </p>
-            <div className="mt-6 flex flex-col sm:flex-row gap-4">
+            <div className="contact-links animate-on-load animate-stagger-3">
               <a 
                 href="mailto:pranavshuklajobs@gmail.com" 
-                className="inline-flex items-center gap-2 text-white hover:text-gray-300 transition-colors border border-white/30 px-4 py-2 rounded"
+                className="contact-link"
               >
-                <Image src="/mail-icon.png" alt="Email" width={20} height={20} className="brightness-0 invert" />
+                <Image src="/mail-icon.png" alt="Email" width={20} height={20} className="contact-icon" />
                 <span>pranavshuklajobs@gmail.com</span>
               </a>
               <Link 
                 href="https://www.linkedin.com/in/pranavshuklafts" 
-                className="inline-flex items-center gap-2 text-white hover:text-gray-300 transition-colors border border-white/30 px-4 py-2 rounded"
+                className="contact-link"
                 target="_blank"
               >
-                <Image src="/linkedin-icon.png" alt="LinkedIn" width={20} height={20} className="brightness-0 invert" />
+                <Image src="/linkedin-icon.png" alt="LinkedIn" width={20} height={20} className="contact-icon" />
                 <span>linkedin.com/in/pranavshuklafts</span>
               </Link>
             </div>
           </div>
-        </div>
+        </section>
+
+        {/* About Section */}
+        <section id="about" className="about-section">
+          <h2 className="section-header animate-on-load">About Me</h2>
+          
+          {/* Personal Introduction */}
+          <div 
+            ref={introRef}
+            className={`about-content animate-on-scroll ${introVisible ? 'animate' : ''}`}
+          >
+            <h3 className="about-subtitle">Introduction</h3>
+            <p className="about-text">I like to think of myself as someone who manages to keep a light heart while also producing results. I love meeting other developers and learning from them, especially in terms of their latest creations.</p>
+          </div>
+
+          {/* Skills */}
+          <div 
+            ref={skillsRef}
+            className={`about-content animate-on-scroll ${skillsVisible ? 'animate' : ''}`}
+          >
+            <h3 className="about-subtitle">Skills</h3>
+            <p className="about-text">With a strong foundation in computer science and experience in software engineering, I specialize in:</p>
+            <ul className="about-list">
+              <li className="about-list-item">
+                <span className="about-list-bullet"></span>
+                <span className="about-list-text">Full Stack Development</span>
+              </li>
+              <li className="about-list-item">
+                <span className="about-list-bullet"></span>
+                <span className="about-list-text">Cloud Computing</span>
+              </li>
+              <li className="about-list-item">
+                <span className="about-list-bullet"></span>
+                <span className="about-list-text">Machine Learning</span>
+              </li>
+            </ul>
+            <p className="about-text">Proficient in Python, JavaScript/TypeScript, C++, and SQL, I have built scalable applications using React, Django, Flask, and AWS. My expertise extends to working with PostgreSQL, Docker, TensorFlow, and Linux as well.</p>
+          </div>
+
+          {/* Experience */}
+          <div 
+            ref={experienceRef}
+            className={`about-content animate-on-scroll ${experienceVisible ? 'animate' : ''}`}
+          >
+            <h3 className="about-subtitle">Experience</h3>
+            <div className="about-experience">
+              <p className="about-company">The Vanguard Group</p>
+              <p className="about-text">I have gained software engineering experience through multiple internships at The Vanguard Group, where I developed cloud-hosted trading applications, optimized financial calculations, and improved user interfaces.</p>
+              <p className="about-company">Henry Ford Health Research Synergy Vanguard Portal</p>
+              <p className="about-text">I worked with other MSU students to develop the Henry Ford Health Research Synergy Vanguard Portal, where I built searchable databases and API integrations to support interdisciplinary collaboration.</p>
+            </div>
+          </div>
+
+          {/* Education */}
+          <div 
+            ref={educationRef}
+            className={`about-content animate-on-scroll ${educationVisible ? 'animate' : ''}`}
+          >
+            <h3 className="about-subtitle">Education</h3>
+            <div className="about-education">
+              <div className="about-school">MSU</div>
+              <div>
+                <p className="about-text">Bachelor of Science in Computer Science</p>
+                <p className="about-degree">Michigan State University, 2024</p>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Projects Section */}
-        <h2 className="text-4xl font-bold mb-8 text-center border-b border-white/30 pb-2">Projects</h2>
-        <ProjectCarousel projects={projects} />
+        <section id="projects" className="projects-section">
+          <h2 className="section-header animate-on-load">Projects</h2>
+          <div 
+            ref={projectsRef}
+            className={`animate-on-scroll ${projectsVisible ? 'animate' : ''}`}
+          >
+            <ProjectCarousel projects={projects} />
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section id="contact" className="contact-section">
+          <h2 className="section-header animate-on-load">Contact</h2>
+          <div 
+            ref={contactRef}
+            className={`contact-content animate-on-scroll ${contactVisible ? 'animate' : ''}`}
+          >
+            <div className="contact-grid">
+              <a 
+                href="mailto:pranavshuklajobs@gmail.com" 
+                className="contact-item"
+              >
+                <Image src="/mail-icon.png" alt="Email" width={24} height={24} className="contact-icon" />
+                <span>pranavshuklajobs@gmail.com</span>
+              </a>
+              <Link 
+                href="https://www.linkedin.com/in/pranavshuklafts/" 
+                className="contact-item"
+                target="_blank"
+              >
+                <Image src="/linkedin-icon.png" alt="LinkedIn" width={24} height={24} className="contact-icon" />
+                <span>linkedin.com/in/pranavshuklafts</span>
+              </Link>
+              <Link 
+                href="https://www.github.com/codebypranav/" 
+                className="contact-item"
+                target="_blank"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="contact-icon">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+                <span>github.com/codebypranav</span>
+              </Link>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
   );

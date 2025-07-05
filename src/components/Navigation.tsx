@@ -1,57 +1,93 @@
 'use client';
 
-import Link from 'next/link';
 import { useState } from 'react';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMenuOpen(false);
+  };
+
   return (
-    <nav className="text-white p-4">
-      <div className="max-w-6xl mx-auto flex justify-between items-center">
-        <Link href="/" className="text-xl font-bold">
+    <nav className="nav-container animate-on-load">
+      <div className="nav-wrapper">
+        <button 
+          onClick={() => scrollToSection('home')}
+          className="nav-brand"
+        >
           Pranav Shukla
-        </Link>
+        </button>
         
         {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-6">
-          <Link href="/" className="hover:text-gray-300 transition-colors">
+        <div className="nav-links">
+          <button 
+            onClick={() => scrollToSection('home')}
+            className="nav-link"
+          >
             Home
-          </Link>
-          <Link href="/about" className="hover:text-gray-300 transition-colors">
+          </button>
+          <button 
+            onClick={() => scrollToSection('about')}
+            className="nav-link"
+          >
             About Me
-          </Link>
+          </button>
+          <button 
+            onClick={() => scrollToSection('projects')}
+            className="nav-link"
+          >
+            Projects
+          </button>
+          <button 
+            onClick={() => scrollToSection('contact')}
+            className="nav-link"
+          >
+            Contact
+          </button>
         </div>
         
         {/* Mobile Navigation */}
-        <div className="dropdown md:hidden">
+        <div className="dropdown">
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="menu-icon flex flex-col justify-center items-center w-8 h-8"
+            className="menu-button"
           >
-            <span className="block w-6 h-0.5 bg-white mb-1.5"></span>
-            <span className="block w-6 h-0.5 bg-white mb-1.5"></span>
-            <span className="block w-6 h-0.5 bg-white"></span>
+            <span className="menu-line"></span>
+            <span className="menu-line"></span>
+            <span className="menu-line"></span>
           </button>
           
-          {isMenuOpen && (
-            <div className="dropdown-content">
-              <Link 
-                href="/" 
-                className="hover:text-gray-300 transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Home
-              </Link>
-              <Link 
-                href="/about" 
-                className="hover:text-gray-300 transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                About Me
-              </Link>
-            </div>
-          )}
+          <div className={`dropdown-content ${isMenuOpen ? 'show' : ''}`}>
+            <button 
+              onClick={() => scrollToSection('home')}
+              className="dropdown-link"
+            >
+              Home
+            </button>
+            <button 
+              onClick={() => scrollToSection('about')}
+              className="dropdown-link"
+            >
+              About Me
+            </button>
+            <button 
+              onClick={() => scrollToSection('projects')}
+              className="dropdown-link"
+            >
+              Projects
+            </button>
+            <button 
+              onClick={() => scrollToSection('contact')}
+              className="dropdown-link"
+            >
+              Contact
+            </button>
+          </div>
         </div>
       </div>
     </nav>
