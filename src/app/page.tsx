@@ -5,6 +5,7 @@ import ProjectCarousel from '@/components/ProjectCarousel';
 import Link from 'next/link';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import './components.css';
+import React, { useState } from 'react';
 
 interface Project {
   title: string;
@@ -20,11 +21,13 @@ export default function Home() {
   const { elementRef: educationRef, isVisible: educationVisible } = useScrollAnimation();
   const { elementRef: projectsRef, isVisible: projectsVisible } = useScrollAnimation();
   const { elementRef: contactRef, isVisible: contactVisible } = useScrollAnimation();
+  const [showTooltip, setShowTooltip] = useState(false);
+  const [showTooltipContact, setShowTooltipContact] = useState(false);
 
   const projects: Project[] = [
     {
       title: "Resume",
-      description: "My professional resume built with Word.",
+      description: "My resume built with Word.",
       link: "https://github.com/codebypranav/Resume",
       image: "/resume-preview.png"
     },
@@ -35,6 +38,13 @@ export default function Home() {
       image: "/airfleet-preview.jpg"
     }
   ];
+
+  function copyEmailToClipboard(text: string) {
+    navigator.clipboard.writeText(text)
+      .catch(err => {
+        console.error('Failed to copy email: ', err);
+      });
+  }
 
   return (
     <main className="main-container">
@@ -60,13 +70,38 @@ export default function Home() {
               Outside of work, I enjoy exploring new technologies, trying new activities, running, watching Formula 1, hanging out with my friends, and eating chocolate.
             </p>
             <div className="contact-links animate-on-load animate-stagger-3">
-              <a 
-                href="mailto:pranavshuklajobs@gmail.com" 
-                className="contact-link"
-              >
-                <Image src="/mail-icon.png" alt="Email" width={20} height={20} className="contact-icon" />
-                <span>pranavshuklajobs@gmail.com</span>
-              </a>
+              <div style={{ position: 'relative', display: 'inline-block' }}>
+                <a
+                  onMouseEnter={() => setShowTooltip(true)}
+                  onMouseLeave={() => setShowTooltip(false)}
+                  onFocus={() => setShowTooltip(true)}
+                  onBlur={() => setShowTooltip(false)}
+                  title="Copy email to clipboard."
+                  onClick={() => copyEmailToClipboard('pranavshuklajobs@gmail.com')}
+                  className="contact-link"
+                  tabIndex={0}
+                >
+                  <Image src="/mail-icon.png" alt="Email" width={20} height={20} className="contact-icon" />
+                  <span>pranavshuklajobs@gmail.com</span>
+                </a>
+                {showTooltip && (
+                  <div style={{
+                    position: 'absolute',
+                    bottom: '120%',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    background: 'rgba(0,0,0,0.85)',
+                    color: '#fff',
+                    padding: '0.5rem 1rem',
+                    borderRadius: '0.5rem',
+                    fontSize: '0.95rem',
+                    whiteSpace: 'nowrap',
+                    zIndex: 1000,
+                  }}>
+                    Copy email to clipboard.
+                  </div>
+                )}
+              </div>
               <Link 
                 href="https://www.linkedin.com/in/pranavshuklafts" 
                 className="contact-link"
@@ -174,13 +209,38 @@ export default function Home() {
             className={`contact-content animate-on-scroll ${contactVisible ? 'animate' : ''}`}
           >
             <div className="contact-grid">
-              <a 
-                href="mailto:pranavshuklajobs@gmail.com" 
-                className="contact-item"
-              >
-                <Image src="/mail-icon.png" alt="Email" width={24} height={24} className="contact-icon" />
-                <span>pranavshuklajobs@gmail.com</span>
-              </a>
+              <div style={{ position: 'relative', display: 'inline-block' }}>
+                <a 
+                  onMouseEnter={() => setShowTooltipContact(true)}
+                  onMouseLeave={() => setShowTooltipContact(false)}
+                  onFocus={() => setShowTooltipContact(true)}
+                  onBlur={() => setShowTooltipContact(false)}
+                  title="Copy email to clipboard."
+                  onClick={() => copyEmailToClipboard('pranavshuklajobs@gmail.com')}
+                  className="contact-link contact-item"
+                  tabIndex={0}
+                >
+                  <Image src="/mail-icon.png" alt="Email" width={24} height={24} className="contact-icon" />
+                  <span>pranavshuklajobs@gmail.com</span>
+                </a>
+                {showTooltipContact && (
+                  <div style={{
+                    position: 'absolute',
+                    bottom: '120%',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    background: 'rgba(0,0,0,0.85)',
+                    color: '#fff',
+                    padding: '0.5rem 1rem',
+                    borderRadius: '0.5rem',
+                    fontSize: '0.95rem',
+                    whiteSpace: 'nowrap',
+                    zIndex: 1000,
+                  }}>
+                    Copy email to clipboard.
+                  </div>
+                )}
+              </div>
               <Link 
                 href="https://www.linkedin.com/in/pranavshuklafts/" 
                 className="contact-item"
@@ -205,4 +265,4 @@ export default function Home() {
       </div>
     </main>
   );
-} 
+}
