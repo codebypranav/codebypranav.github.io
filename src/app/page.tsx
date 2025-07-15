@@ -67,7 +67,7 @@ export default function Home() {
               Hello, I&apos;m a recent graduate of Michigan State University, with a Bachelors of Science in Computer Science. I have experience as a manufacturing software engineer at Ford Motor Company, and at Vanguard as a Software Engineering Intern, where I did full-stack and cloud development. Some technologies I know include <span className="intro-text-bold">Python</span>, <span className="intro-text-bold">JavaScript/TypeScript</span>, <span className="intro-text-bold">SQL</span>, <span className="intro-text-bold">GCP</span>, <span className="intro-text-bold">AWS</span>, and <span className="intro-text-bold">Docker</span>.
             </p>
             <p className="intro-text intro-text-margin">
-              Outside of work, I enjoy exploring new technologies, trying new activities, running, watching Formula 1, hanging out with my friends, and eating chocolate.
+              Outside of work, I enjoy exploring new technologies, trying new activities, running, photography, watching Formula 1, hanging out with my friends, and eating chocolate.
             </p>
             <div className="contact-links animate-on-load animate-stagger-3">
               <div style={{ position: 'relative', display: 'inline-block' }}>
