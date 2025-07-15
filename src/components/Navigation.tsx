@@ -49,6 +49,14 @@ const Navigation = () => {
           >
             Contact
           </button>
+          <a
+            href="https://github.com/codebypranav/Resume"
+            className="nav-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Resume
+          </a>
         </div>
         
         {/* Mobile Navigation */}
@@ -87,6 +95,14 @@ const Navigation = () => {
             >
               Contact
             </button>
+            <a
+              href="https://github.com/codebypranav/Resume"
+              className="dropdown-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Resume
+            </a>
           </div>
         </div>
       </div>

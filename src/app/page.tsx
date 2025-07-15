@@ -25,12 +25,12 @@ export default function Home() {
   const [showTooltipContact, setShowTooltipContact] = useState(false);
 
   const projects: Project[] = [
-    {
-      title: "Resume",
-      description: "My resume built with Word.",
-      link: "https://github.com/codebypranav/Resume",
-      image: "/resume-preview.png"
-    },
+    // {
+    //   title: "Resume",
+    //   description: "My resume built with Word.",
+    //   link: "https://github.com/codebypranav/Resume",
+    //   image: "/resume-preview.png"
+    // },
     {
       title: "AirFleet",
       description: "AI-enabled pilot logbook for real-life operations and sim flights.",

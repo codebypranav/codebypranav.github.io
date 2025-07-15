@@ -54,20 +54,23 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects }) => {
           </Link>
         </div>
       </div>
-      
-      <button
-        onClick={prevSlide}
-        className="carousel-button prev"
-      >
-        ←
-      </button>
-      <button
-        onClick={nextSlide}
-        className="carousel-button next"
-      >
-        →
-      </button>
-
+      {/* Hide arrows if only one project */}
+      {projects.length > 1 && (
+        <>
+          <button
+            onClick={prevSlide}
+            className="carousel-button prev"
+          >
+            ←
+          </button>
+          <button
+            onClick={nextSlide}
+            className="carousel-button next"
+          >
+            →
+          </button>
+        </>
+      )}
       {/* Indicator dots */}
       <div className="carousel-indicators">
         {projects.map((_, index) => (
