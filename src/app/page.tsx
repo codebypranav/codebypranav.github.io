@@ -25,17 +25,23 @@ export default function Home() {
   const [showTooltipContact, setShowTooltipContact] = useState(false);
 
   const projects: Project[] = [
-    // {
-    //   title: "Resume",
-    //   description: "My resume built with Word.",
-    //   link: "https://github.com/codebypranav/Resume",
-    //   image: "/resume-preview.png"
-    // },
     {
       title: "AirFleet",
       description: "AI-enabled pilot logbook for real-life operations and sim flights.",
       link: "https://github.com/codebypranav/AirFleet",
       image: "/airfleet-preview.jpg"
+    },
+    {
+      title: "Henry Ford Health – Research Synergy Portal",
+      description: "Researcher discovery platform with Elasticsearch-powered search and automated data ingestion from clinical directories.",
+      link: "https://github.com/codebypranav/research-synergy-vanguard-portal",
+      image: "/resume-preview.png"
+    },
+    {
+      title: "WasteWise",
+      description: "Smart waste bin with React/Flask frontend, ESP32-S3 hardware integration, and a PyTorch computer vision model for waste classification.",
+      link: "https://github.com/codebypranav/WasteWise",
+      image: "/resume-preview.png"
     }
   ];
 
@@ -51,20 +57,16 @@ export default function Home() {
       <div className="main-inner">
         {/* Introduction Section */}
         <section id="home" className="intro-section animate-on-load">
-          <div className="profile-image-container animate-on-load animate-stagger-1">
-            <Image
-              src="/personal_photo.png"
-              alt="Pranav Shukla"
-              width={256}
-              height={256}
-              className="profile-image"
-              priority
-            />
-          </div>
+          <div
+            className="profile-image-container animate-on-load animate-stagger-1"
+            style={{ backgroundImage: "url('/personal_photo.jpg')" }}
+            role="img"
+            aria-label="Pranav Shukla"
+          />
           <div className="intro-content animate-on-load animate-stagger-2">
             <h1 className="intro-title">Pranav Shukla</h1>
             <p className="intro-text">
-              Hello, I&apos;m a recent graduate of Michigan State University, with a Bachelors of Science in Computer Science. I have experience as a manufacturing software engineer at Ford Motor Company, and at Vanguard as a Software Engineering Intern, where I did full-stack and cloud development. Some technologies I know include <span className="intro-text-bold">Python</span>, <span className="intro-text-bold">JavaScript/TypeScript</span>, <span className="intro-text-bold">SQL</span>, <span className="intro-text-bold">GCP</span>, <span className="intro-text-bold">AWS</span>, and <span className="intro-text-bold">Docker</span>.
+              Hello, I&apos;m a Software Engineer at Ford Motor Company, where I build production analytics systems for manufacturing operations. I&apos;m a graduate of Michigan State University with a B.S. in Computer Science, and previously interned at Vanguard three times doing full-stack and cloud development. Some technologies I know include <span className="intro-text-bold">Python</span>, <span className="intro-text-bold">JavaScript/TypeScript</span>, <span className="intro-text-bold">SQL</span>, <span className="intro-text-bold">GCP</span>, <span className="intro-text-bold">AWS</span>, and <span className="intro-text-bold">Docker</span>.
             </p>
             <p className="intro-text intro-text-margin">
               Outside of work, I enjoy exploring new technologies, trying new activities, running, photography, watching Formula 1, hanging out with my friends, and eating chocolate.
@@ -148,7 +150,7 @@ export default function Home() {
                 <span className="about-list-text">Machine Learning</span>
               </li>
             </ul>
-            <p className="about-text">Proficient in Python, JavaScript/TypeScript, AWS, and SQL, I have built scalable applications that use frameworks like React and Flask, and tools such as Pinecone and Docker.</p>
+            <p className="about-text">Proficient in Python, JavaScript/TypeScript, SQL, AWS, and GCP, I have built scalable applications using React, Next.js, and Flask, and tools such as Docker, PostgreSQL, and PyTorch.</p>
           </div>
 
           {/* Experience */}
@@ -159,11 +161,11 @@ export default function Home() {
             <h3 className="about-subtitle">Experience</h3>
             <div className="about-experience">
               <p className="about-company">Ford Motor Company</p>
-              <p className="about-text">As a Manufacturing Software Engineer at Ford, I develop and maintain applications that support manufacturing operations, focusing on improving efficiency and reliability.</p>
+              <p className="about-text">As a Software Engineer at Ford, I work on manufacturing software, building and maintaining applications that support plant operations and quality monitoring.</p>
               <p className="about-company">The Vanguard Group</p>
-              <p className="about-text">I have gained software engineering experience through multiple internships at The Vanguard Group, where I developed cloud-hosted trading applications, optimized financial calculations, and improved user interfaces.</p>
+              <p className="about-text">I interned at Vanguard three times, working on ETF trading automation (~$8M in annual cost savings), GDP nowcasting, React/D3 analytics tools for traders, and cloud infrastructure connecting traders with real-time data suppliers (saving over $100K/month).</p>
               <p className="about-company">Henry Ford Health Research Synergy Vanguard Portal</p>
-              <p className="about-text">I worked with other MSU students to develop the Henry Ford Health Research Synergy Vanguard Portal, where I built searchable databases and API integrations to support interdisciplinary collaboration.</p>
+              <p className="about-text">I worked with other MSU students to develop the Henry Ford Health Research Synergy Vanguard Portal, integrating Elasticsearch into a Flask API to improve researcher discovery and automating data ingestion from external clinical directories.</p>
             </div>
           </div>
 

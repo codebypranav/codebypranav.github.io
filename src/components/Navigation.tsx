@@ -50,7 +50,7 @@ const Navigation = () => {
             Contact
           </button>
           <a
-            href="https://github.com/codebypranav/Resume"
+            href="/Pranav_Shukla.pdf"
             className="nav-link"
             target="_blank"
             rel="noopener noreferrer"
@@ -96,7 +96,7 @@ const Navigation = () => {
               Contact
             </button>
             <a
-              href="https://github.com/codebypranav/Resume"
+              href="/Pranav_Shukla.pdf"
               className="dropdown-link"
               target="_blank"
               rel="noopener noreferrer"
