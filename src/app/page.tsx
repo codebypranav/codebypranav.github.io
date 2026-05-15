@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import ProjectCarousel from '@/components/ProjectCarousel';
+import ResumeViewer from '@/components/ResumeViewer';
 import Link from 'next/link';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import './components.css';
@@ -195,13 +196,16 @@ export default function Home() {
         {/* Projects Section */}
         <section id="projects" className="projects-section">
           <h2 className="section-header animate-on-load">Projects</h2>
-          <div 
+          <div
             ref={projectsRef}
             className={`animate-on-scroll ${projectsVisible ? 'animate' : ''}`}
           >
             <ProjectCarousel projects={projects} />
           </div>
         </section>
+
+        {/* Resume Section */}
+        <ResumeViewer />
 
         {/* Contact Section */}
         <section id="contact" className="contact-section">
