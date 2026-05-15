@@ -43,20 +43,18 @@ const Navigation = () => {
           >
             Projects
           </button>
-          <button 
+          <button
             onClick={() => scrollToSection('contact')}
             className="nav-link"
           >
             Contact
           </button>
-          <a
-            href="/Pranav_Shukla.pdf"
+          <button
+            onClick={() => scrollToSection('resume')}
             className="nav-link"
-            target="_blank"
-            rel="noopener noreferrer"
           >
             Resume
-          </a>
+          </button>
         </div>
         
         {/* Mobile Navigation */}
@@ -89,20 +87,18 @@ const Navigation = () => {
             >
               Projects
             </button>
-            <button 
+            <button
               onClick={() => scrollToSection('contact')}
               className="dropdown-link"
             >
               Contact
             </button>
-            <a
-              href="/Pranav_Shukla.pdf"
+            <button
+              onClick={() => scrollToSection('resume')}
               className="dropdown-link"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               Resume
-            </a>
+            </button>
           </div>
         </div>
       </div>
