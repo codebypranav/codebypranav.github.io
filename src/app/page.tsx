@@ -33,9 +33,9 @@ export default function Home() {
       image: "/airfleet-preview.jpg"
     },
     {
-      title: "Henry Ford Health – Research Synergy Portal",
-      description: "Researcher discovery platform with Elasticsearch-powered search and automated data ingestion from clinical directories.",
-      link: "https://github.com/codebypranav/research-synergy-vanguard-portal",
+      title: "ExplorAItion",
+      description: "An exploration platform powered by AI, featuring intelligent search and discovery capabilities.",
+      link: "https://github.com/codebypranav/ExplorAItion",
       image: "/resume-preview.png"
     },
     {
