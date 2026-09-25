@@ -88,16 +88,16 @@ const Navigation = () => {
               Projects
             </button>
             <button
-              onClick={() => scrollToSection('contact')}
-              className="dropdown-link"
-            >
-              Contact
-            </button>
-            <button
               onClick={() => scrollToSection('resume')}
               className="dropdown-link"
             >
               Resume
+            </button>
+            <button
+              onClick={() => scrollToSection('contact')}
+              className="dropdown-link"
+            >
+              Contact
             </button>
           </div>
         </div>
