@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import ProjectCarousel from '@/components/ProjectCarousel';
+import ResumeViewer from '@/components/ResumeViewer';
 import Link from 'next/link';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import './components.css';
@@ -27,19 +28,19 @@ export default function Home() {
   const projects: Project[] = [
     {
       title: "AirFleet",
-      description: "AI-enabled pilot logbook for real-life operations and sim flights.",
+      description: "AI-enabled pilot logbook and operations dashboard for flight tracking, trip management, and aviation workflows.",
       link: "https://github.com/codebypranav/AirFleet",
       image: "/airfleet-preview.jpg"
     },
     {
       title: "ExplorAItion",
-      description: "An exploration platform powered by AI, featuring intelligent search and discovery capabilities.",
+      description: "AI-powered travel planning app that turns preferences and historical trip data into personalized itinerary recommendations.",
       link: "https://github.com/codebypranav/ExplorAItion",
       image: "/resume-preview.png"
     },
     {
       title: "WasteWise",
-      description: "Smart waste bin with React/Flask frontend, ESP32-S3 hardware integration, and a PyTorch computer vision model for waste classification.",
+      description: "Smart waste monitoring platform with analytics, threshold alerts, and computer-vision-based classification workflows.",
       link: "https://github.com/codebypranav/WasteWise",
       image: "/resume-preview.png"
     }
@@ -66,10 +67,10 @@ export default function Home() {
           <div className="intro-content animate-on-load animate-stagger-2">
             <h1 className="intro-title">Pranav Shukla</h1>
             <p className="intro-text">
-              Hello, I&apos;m a Software Engineer at Ford Motor Company, where I build production analytics systems for manufacturing operations. I&apos;m a graduate of Michigan State University with a B.S. in Computer Science, and previously interned at Vanguard three times doing full-stack and cloud development. Some technologies I know include <span className="intro-text-bold">Python</span>, <span className="intro-text-bold">JavaScript/TypeScript</span>, <span className="intro-text-bold">SQL</span>, <span className="intro-text-bold">GCP</span>, <span className="intro-text-bold">AWS</span>, and <span className="intro-text-bold">Docker</span>.
+              I&apos;m a Software Engineer building data-driven products, AI-enabled experiences, and scalable application systems for real-world problems. I work at Ford Motor Company on analytics and manufacturing software, and I&apos;ve also spent time building cloud, full-stack, and product-focused solutions across research and financial technology.
             </p>
             <p className="intro-text intro-text-margin">
-              Outside of work, I enjoy exploring new technologies, trying new activities, running, photography, watching Formula 1, hanging out with my friends, and eating chocolate.
+              My work sits at the intersection of software engineering, cloud infrastructure, and practical AI. I enjoy turning messy business and user problems into thoughtful tools that are useful, reliable, and easy to operate.
             </p>
             <div className="contact-links animate-on-load animate-stagger-3">
               <div style={{ position: 'relative', display: 'inline-block' }}>
@@ -126,7 +127,7 @@ export default function Home() {
             className={`about-content animate-on-scroll ${introVisible ? 'animate' : ''}`}
           >
             <h3 className="about-subtitle">Introduction</h3>
-            <p className="about-text">I like to think of myself as someone who manages to keep a light heart while also producing results. I love meeting other developers and learning from them, especially in terms of their latest creations.</p>
+            <p className="about-text">I like to think of myself as someone who balances strong execution with curiosity. I enjoy learning fast, collaborating with smart people, and building tools that solve real operational problems while staying approachable and thoughtful in how I work.</p>
           </div>
 
           {/* Skills */}
@@ -135,22 +136,22 @@ export default function Home() {
             className={`about-content animate-on-scroll ${skillsVisible ? 'animate' : ''}`}
           >
             <h3 className="about-subtitle">Skills</h3>
-            <p className="about-text">With a strong foundation in computer science and experience in software engineering, I specialize in:</p>
+            <p className="about-text">I work across the full software lifecycle, from product thinking and design to backend systems, cloud deployment, and analytics.</p>
             <ul className="about-list">
               <li className="about-list-item">
                 <span className="about-list-bullet"></span>
-                <span className="about-list-text">Full Stack Development</span>
+                <span className="about-list-text">Full-stack product development</span>
               </li>
               <li className="about-list-item">
                 <span className="about-list-bullet"></span>
-                <span className="about-list-text">Cloud Computing</span>
+                <span className="about-list-text">Cloud and data infrastructure</span>
               </li>
               <li className="about-list-item">
                 <span className="about-list-bullet"></span>
-                <span className="about-list-text">Machine Learning</span>
+                <span className="about-list-text">Applied AI and intelligent workflows</span>
               </li>
             </ul>
-            <p className="about-text">Proficient in Python, JavaScript/TypeScript, SQL, AWS, and GCP, I have built scalable applications using React, Next.js, and Flask, and tools such as Docker, PostgreSQL, and PyTorch.</p>
+            <p className="about-text">My toolkit includes Python, JavaScript/TypeScript, SQL, AWS, GCP, Docker, Next.js, React, Flask, Django, PostgreSQL, and PyTorch.</p>
           </div>
 
           {/* Experience */}
@@ -161,11 +162,11 @@ export default function Home() {
             <h3 className="about-subtitle">Experience</h3>
             <div className="about-experience">
               <p className="about-company">Ford Motor Company</p>
-              <p className="about-text">As a Software Engineer at Ford, I work on manufacturing software, building and maintaining applications that support plant operations and quality monitoring.</p>
+              <p className="about-text">Software Engineer focused on manufacturing analytics and operational tooling, building applications that improve plant visibility, process reliability, and decision support.</p>
               <p className="about-company">The Vanguard Group</p>
-              <p className="about-text">I interned at Vanguard three times, working on ETF trading automation (~$8M in annual cost savings), GDP nowcasting, React/D3 analytics tools for traders, and cloud infrastructure connecting traders with real-time data suppliers (saving over $100K/month).</p>
-              <p className="about-company">Henry Ford Health Research Synergy Vanguard Portal</p>
-              <p className="about-text">I worked with other MSU students to develop the Henry Ford Health Research Synergy Vanguard Portal, integrating Elasticsearch into a Flask API to improve researcher discovery and automating data ingestion from external clinical directories.</p>
+              <p className="about-text">Built and supported cloud-hosted internal tools, analytics workflows, and full-stack experiences across financial technology and real-time data environments.</p>
+              <p className="about-company">Research & Product Projects</p>
+              <p className="about-text">Developed applied software projects spanning healthcare data discovery, machine learning, travel personalization, and smart infrastructure monitoring.</p>
             </div>
           </div>
 
@@ -185,7 +186,7 @@ export default function Home() {
             <div className="about-education">
               <div className="about-school">IAC</div>
               <div>
-                <p className="about-text">International Baccalaureate Diploma/High School Diploma</p>
+                <p className="about-text">International Baccalaureate Diploma / High School Diploma</p>
                 <p className="about-degree">International Academy - Central/Okma, May 2020</p>
               </div>
             </div>
@@ -202,6 +203,9 @@ export default function Home() {
             <ProjectCarousel projects={projects} />
           </div>
         </section>
+
+        {/* Resume Section */}
+        <ResumeViewer />
 
         {/* Contact Section */}
         <section id="contact" className="contact-section">
