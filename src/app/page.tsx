@@ -21,6 +21,7 @@ export default function Home() {
   const { elementRef: experienceRef, isVisible: experienceVisible } = useScrollAnimation();
   const { elementRef: educationRef, isVisible: educationVisible } = useScrollAnimation();
   const { elementRef: projectsRef, isVisible: projectsVisible } = useScrollAnimation();
+  const { elementRef: resumeRef, isVisible: resumeVisible } = useScrollAnimation();
   const { elementRef: contactRef, isVisible: contactVisible } = useScrollAnimation();
   const [showTooltip, setShowTooltip] = useState(false);
   const [showTooltipContact, setShowTooltipContact] = useState(false);
