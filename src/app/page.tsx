@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import ProjectCarousel from '@/components/ProjectCarousel';
-import ResumeViewer from '@/components/ResumeViewer';
 import Link from 'next/link';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import './components.css';
@@ -21,7 +20,6 @@ export default function Home() {
   const { elementRef: experienceRef, isVisible: experienceVisible } = useScrollAnimation();
   const { elementRef: educationRef, isVisible: educationVisible } = useScrollAnimation();
   const { elementRef: projectsRef, isVisible: projectsVisible } = useScrollAnimation();
-  const { elementRef: resumeRef, isVisible: resumeVisible } = useScrollAnimation();
   const { elementRef: contactRef, isVisible: contactVisible } = useScrollAnimation();
   const [showTooltip, setShowTooltip] = useState(false);
   const [showTooltipContact, setShowTooltipContact] = useState(false);
@@ -204,9 +202,6 @@ export default function Home() {
             <ProjectCarousel projects={projects} />
           </div>
         </section>
-
-        {/* Resume Section */}
-        <ResumeViewer />
 
         {/* Contact Section */}
         <section id="contact" className="contact-section">
