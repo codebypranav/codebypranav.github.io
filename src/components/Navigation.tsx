@@ -44,16 +44,16 @@ const Navigation = () => {
             Projects
           </button>
           <button
-            onClick={() => scrollToSection('contact')}
-            className="nav-link"
-          >
-            Contact
-          </button>
-          <button
             onClick={() => scrollToSection('resume')}
             className="nav-link"
           >
             Resume
+          </button>
+          <button
+            onClick={() => scrollToSection('contact')}
+            className="nav-link"
+          >
+            Contact
           </button>
         </div>
         
