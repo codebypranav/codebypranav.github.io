@@ -11,7 +11,8 @@ import React, { useState } from 'react';
 interface Project {
   title: string;
   description: string;
-  link: string;
+  repoLink: string;
+  liveLink?: string;
   image: string;
 }
 
@@ -29,19 +30,20 @@ export default function Home() {
     {
       title: "AirFleet",
       description: "AI-enabled pilot logbook and operations dashboard for flight tracking, trip management, and aviation workflows.",
-      link: "https://github.com/codebypranav/AirFleet",
+      repoLink: "https://github.com/codebypranav/AirFleet",
+      liveLink: "https://airfleet.vercel.app/",
       image: "/airfleet-preview.jpg"
     },
     {
       title: "ExplorAItion",
       description: "AI-powered travel planning app that turns preferences and historical trip data into personalized itinerary recommendations.",
-      link: "https://github.com/codebypranav/ExplorAItion",
+      repoLink: "https://github.com/codebypranav/ExplorAItion",
       image: "/resume-preview.png"
     },
     {
       title: "WasteWise",
       description: "Smart waste monitoring platform with analytics, threshold alerts, and computer-vision-based classification workflows.",
-      link: "https://github.com/codebypranav/WasteWise",
+      repoLink: "https://github.com/codebypranav/WasteWise",
       image: "/resume-preview.png"
     }
   ];
