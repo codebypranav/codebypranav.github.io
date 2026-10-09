@@ -4,13 +4,6 @@
   padding: 2rem;
 }
 
-.content-wrapper {
-  background-color: rgba(0, 0, 0, 0.85);
-  min-height: 100vh;
-  width: 100vw;
-  position: relative;
-}
-
 .main-inner {
   max-width: 72rem;
   margin: 0 auto;
@@ -109,8 +102,8 @@
   border-radius: 50%;
   background-size: cover;
   background-position: center top;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 15px -3px rgba(var(--ink-rgb), 0.1);
+  border: 1px solid rgba(var(--sand-rgb), 0.3);
 }
 
 .intro-content {
@@ -118,10 +111,13 @@
 }
 
 .intro-title {
-  font-size: 1.875rem;
-  font-weight: 700;
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--heading);
   margin-bottom: 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(var(--sand-rgb), 0.3);
   padding-bottom: 0.5rem;
 }
 
@@ -149,6 +145,8 @@
 @media (min-width: 640px) {
   .contact-links {
     flex-direction: row;
+    /* Side by side when they fit; stacked rather than off-screen when they don't. */
+    flex-wrap: wrap;
   }
 }
 
@@ -156,34 +154,48 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: white;
+  color: var(--text);
   transition: color 0.2s ease;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(var(--sand-rgb), 0.3);
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
 }
 
 .contact-link:hover {
-  color: #d1d5db;
+  color: var(--moss-200);
+  border-color: rgba(var(--moss-rgb), 0.55);
 }
 
 .contact-icon {
-  filter: brightness(0) invert(1);
+  /* PNG icons are black; flatten then re-tint into the sand range. */
+  filter: brightness(0) invert(0.92) sepia(0.35) saturate(1.6) hue-rotate(350deg);
 }
 
 /* Section Headers */
 .section-header {
-  font-size: 2.25rem;
-  font-weight: 700;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--heading);
   margin-bottom: 3rem;
   text-align: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  padding-bottom: 0.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(
+      90deg,
+      transparent,
+      rgba(var(--moss-rgb), 0.55) 35%,
+      rgba(var(--sand-rgb), 0.35) 50%,
+      rgba(var(--moss-rgb), 0.55) 65%,
+      transparent
+    )
+    1;
 }
 
 /* About Section Styles - No boxes */
 .about-section {
-  color: white;
+  color: var(--text);
   display: flex;
   flex-direction: column;
   gap: 3rem;
@@ -196,11 +208,13 @@
 }
 
 .about-subtitle {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
   margin-bottom: 1.5rem;
-  color: white;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--heading);
+  border-bottom: 1px solid rgba(var(--sand-rgb), 0.2);
   padding-bottom: 0.5rem;
 }
 
@@ -228,7 +242,7 @@
   display: inline-block;
   width: 0.5rem;
   height: 0.5rem;
-  background-color: white;
+  background-color: var(--text);
   border-radius: 50%;
 }
 
@@ -244,9 +258,11 @@
 }
 
 .about-company {
-  font-weight: 700;
-  font-size: 1.25rem;
-  color: white;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: -0.025em;
+  color: var(--heading);
   margin-bottom: 0.5rem;
 }
 
@@ -258,23 +274,25 @@
 }
 
 .about-school {
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: white;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.25rem;
+  letter-spacing: -0.03em;
+  color: var(--heading);
 }
 
 .about-degree {
-  color: #d1d5db;
+  color: var(--text-muted);
   font-size: 1.125rem;
 }
 
 /* Contact Section Styles */
 .contact-section {
-  color: white;
+  color: var(--text);
 }
 
 .contact-content {
-  max-width: 48rem;
+  max-width: 64rem;
   margin: 0 auto;
 }
 
@@ -282,14 +300,15 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  color: white;
+  color: var(--text);
   text-decoration: none;
   padding: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--line);
   border-radius: 0.5rem;
   transition: all 0.2s ease;
-  background-color: rgba(0, 0, 0, 0.3);
-  min-width: 320px;
+  background-color: rgba(var(--ink-rgb), 0.45);
+  /* Grid tracks below set the width; a hard minimum here overflows narrow pages. */
+  min-width: 0;
   white-space: nowrap;
   flex: 1 1 0%;
   overflow: hidden;
@@ -302,18 +321,19 @@
 }
 
 .contact-item:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(var(--moss-rgb), 0.16);
+  border-color: rgba(var(--moss-rgb), 0.45);
   transform: translateY(-2px);
 }
 
 .contact-icon {
-  filter: brightness(0) invert(1);
+  /* PNG icons are black; flatten then re-tint into the sand range. */
+  filter: brightness(0) invert(0.92) sepia(0.35) saturate(1.6) hue-rotate(350deg);
 }
 
 /* Navigation Styles */
 .nav-container {
-  color: white;
+  color: var(--text);
   padding: 1rem;
 }
 
@@ -326,9 +346,11 @@
 }
 
 .nav-brand {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: white;
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--text);
   text-decoration: none;
   background: none;
   border: none;
@@ -337,7 +359,7 @@
 }
 
 .nav-brand:hover {
-  color: #d1d5db;
+  color: var(--moss-200);
 }
 
 .nav-links {
@@ -352,7 +374,7 @@
 }
 
 .nav-link {
-  color: white;
+  color: var(--text);
   text-decoration: none;
   background: none;
   border: none;
@@ -362,7 +384,7 @@
 }
 
 .nav-link:hover {
-  color: #d1d5db;
+  color: var(--moss-200);
 }
 
 .dropdown {
@@ -388,7 +410,7 @@
 .menu-line {
   width: 1.5rem;
   height: 0.125rem;
-  background-color: white;
+  background-color: var(--text);
   transition: all 0.2s ease;
 }
 
@@ -400,8 +422,8 @@
   position: absolute;
   top: 100%;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(var(--ink-rgb), 0.9);
+  border: 1px solid rgba(var(--sand-rgb), 0.2);
   border-radius: 0.5rem;
   padding: 0.5rem;
   display: none;
@@ -415,7 +437,7 @@
 }
 
 .dropdown-link {
-  color: white;
+  color: var(--text);
   text-decoration: none;
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
@@ -428,7 +450,7 @@
 }
 
 .dropdown-link:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(var(--sand-rgb), 0.1);
 }
 
 /* Projects Grid Styles */
@@ -442,10 +464,10 @@
 
 .project-card {
   padding: 2rem;
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(var(--sand-rgb), 0.05);
+  border: 1px solid rgba(var(--sand-rgb), 0.1);
   border-radius: 0.5rem;
-  color: white;
+  color: var(--text);
   transition: all 0.2s ease;
   display: flex;
   flex-direction: column;
@@ -453,8 +475,8 @@
 }
 
 .project-card:hover {
-  background-color: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(var(--sand-rgb), 0.08);
+  border-color: rgba(var(--sand-rgb), 0.2);
   transform: translateY(-4px);
 }
 
@@ -462,11 +484,11 @@
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0;
-  color: white;
+  color: var(--text);
 }
 
 .project-card-description {
-  color: #d1d5db;
+  color: var(--text-muted);
   font-size: 1rem;
   line-height: 1.6;
   margin: 0;
@@ -482,9 +504,10 @@
 .project-card-link {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  background-color: rgba(59, 130, 246, 0.3);
-  border: 1px solid rgba(59, 130, 246, 0.5);
-  color: white;
+  background-color: var(--moss-500);
+  border: 1px solid var(--moss-500);
+  color: var(--accent-ink);
+  font-family: inherit;
   border-radius: 0.25rem;
   transition: all 0.2s ease;
   font-weight: 600;
@@ -493,45 +516,36 @@
 }
 
 .project-card-link:hover {
-  background-color: rgba(59, 130, 246, 0.5);
-  border-color: rgba(59, 130, 246, 0.8);
+  background-color: var(--moss-400);
+  border-color: var(--moss-400);
   transform: translateY(-2px);
 }
 
 .project-card-link-secondary {
-  background-color: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
+  background-color: transparent;
+  border-color: var(--line-strong);
+  color: var(--text);
 }
 
 .project-card-link-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.16);
-  border-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(var(--sand-rgb), 0.1);
+  border-color: rgba(var(--sand-rgb), 0.5);
+  color: var(--sand-50);
 }
 
 .contact-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  /* Columns drop as space runs out instead of squeezing the addresses. */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
   gap: 1.5rem;
   justify-content: center;
-}
-
-@media (min-width: 640px) {
-  .contact-grid {
-    grid-template-columns: repeat(2, minmax(320px, 1fr));
-  }
-}
-
-@media (min-width: 1024px) {
-  .contact-grid {
-    grid-template-columns: repeat(3, minmax(320px, 1fr));
-  }
 }
 
 /* Resume Section Styles */
 .resume-section {
   margin-bottom: 6rem;
   padding: 2rem 0;
-  color: white;
+  color: var(--text);
 }
 
 .resume-container {
@@ -549,16 +563,16 @@
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(var(--sand-rgb), 0.05);
+  border: 1px solid rgba(var(--sand-rgb), 0.1);
   border-radius: 0.5rem;
 }
 
 .resume-btn {
   padding: 0.5rem 1rem;
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: white;
+  background-color: rgba(var(--sand-rgb), 0.1);
+  border: 1px solid rgba(var(--sand-rgb), 0.3);
+  color: var(--text);
   border-radius: 0.25rem;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -566,8 +580,8 @@
 }
 
 .resume-btn:hover:not(:disabled) {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(var(--sand-rgb), 0.2);
+  border-color: rgba(var(--sand-rgb), 0.5);
   transform: translateY(-2px);
 }
 
@@ -577,13 +591,15 @@
 }
 
 .resume-download-btn {
-  background-color: rgba(59, 130, 246, 0.3);
-  border-color: rgba(59, 130, 246, 0.5);
+  background-color: var(--moss-500);
+  border-color: var(--moss-500);
+  color: var(--accent-ink);
 }
 
 .resume-download-btn:hover {
-  background-color: rgba(59, 130, 246, 0.5);
-  border-color: rgba(59, 130, 246, 0.8);
+  background-color: var(--moss-400);
+  border-color: var(--moss-400);
+  color: var(--accent-ink);
 }
 
 .resume-page-info {
@@ -596,7 +612,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 1px solid rgba(var(--sand-rgb), 0.1);
   padding-left: 1rem;
 }
 
@@ -609,15 +625,469 @@
 .resume-viewer {
   display: flex;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(var(--ink-rgb), 0.5);
+  border: 1px solid rgba(var(--sand-rgb), 0.1);
   border-radius: 0.5rem;
   padding: 2rem;
   overflow-x: auto;
 }
 
 .resume-loading {
-  color: #d1d5db;
+  color: var(--text-muted);
   text-align: center;
   padding: 2rem;
+}
+/* Screen-reader-only text */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Typed Intro */
+.typewriter {
+  max-width: 72rem;
+  margin: 0 auto 3rem;
+  padding: 1.5rem 0 0;
+}
+
+.typewriter-line {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 4.6vw, 2.9rem);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  /* Two lines of height so the page never jumps as phrases change. */
+  min-height: calc(2 * 1.3em);
+  color: var(--text);
+}
+
+.typewriter-prefix {
+  color: var(--text-dim);
+  font-style: italic;
+}
+
+.typewriter-typed {
+  color: var(--sand-50);
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  width: 0.08em;
+  min-width: 2px;
+  height: 0.95em;
+  margin-left: 0.1em;
+  background-color: var(--moss-400);
+  vertical-align: baseline;
+  translate: 0 0.08em;
+}
+
+.typewriter-cursor-blink {
+  animation: cursorBlink 1.05s steps(1, end) infinite;
+}
+
+@keyframes cursorBlink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+/* Short moss rule instead of a full-width divider. */
+.typewriter-rule {
+  display: block;
+  width: 4.5rem;
+  height: 2px;
+  margin-top: 1.75rem;
+  border-radius: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--moss-500),
+    rgba(var(--moss-rgb), 0)
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typewriter-cursor-blink {
+    animation: none;
+  }
+}
+
+/* Project Carousel */
+.carousel {
+  --card-width: min(44rem, 86vw);
+  /* 16:10 screenshot plus the faux browser bar above it. */
+  --card-height: calc(var(--card-width) * 0.625 + 2.45rem);
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.carousel-stage {
+  position: relative;
+  height: var(--card-height);
+  perspective: 1800px;
+  perspective-origin: 50% 50%;
+  outline: none;
+  touch-action: pan-y;
+  /* Neighbours reach past the content column; clip them here so they can never
+     widen the page, and fade the cut so it reads as depth rather than a crop. */
+  overflow-x: clip;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 7%,
+    #000 93%,
+    transparent 100%
+  );
+}
+
+.carousel-stage:focus-visible {
+  outline: 1px solid rgba(var(--sand-rgb), 0.5);
+  outline-offset: 1.25rem;
+  border-radius: 0.75rem;
+}
+
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: var(--card-width);
+  margin-left: calc(var(--card-width) / -2);
+  transform-style: preserve-3d;
+  transition:
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.55s ease,
+    filter 0.55s ease;
+  transform:
+    translateX(calc(var(--offset) * 52% + var(--drag, 0px)))
+    translateZ(calc(var(--distance) * -340px))
+    rotateY(calc(var(--offset) * -32deg))
+    scale(calc(1 - var(--distance) * 0.06));
+  opacity: calc(1 - var(--distance) * 0.65);
+  filter: blur(calc(var(--distance) * 2px));
+  pointer-events: none;
+}
+
+/* Side slides stay clickable; everything further back is out of the way. */
+.carousel-slide:not(.carousel-slide-active) .carousel-shot {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.carousel-slide-active {
+  pointer-events: auto;
+  opacity: 1;
+  filter: none;
+}
+
+.carousel-stage-dragging .carousel-slide {
+  transition: opacity 0.55s ease, filter 0.55s ease;
+}
+
+.carousel-shot {
+  display: block;
+  width: 100%;
+  padding: 0;
+  background-color: rgba(var(--ink-rgb), 0.92);
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 30px 60px -20px rgba(var(--ink-rgb), 0.85);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.carousel-slide-active .carousel-shot {
+  border-color: rgba(var(--moss-rgb), 0.45);
+  box-shadow:
+    0 40px 80px -24px rgba(var(--ink-rgb), 0.95),
+    0 0 0 1px rgba(var(--moss-rgb), 0.12);
+}
+
+/* Faux browser bar above each screenshot */
+.carousel-chrome {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 0.85rem;
+  background-color: rgba(48, 40, 31, 0.92);
+  border-bottom: 1px solid var(--line);
+}
+
+.carousel-dot {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background-color: rgba(var(--sand-rgb), 0.26);
+  flex-shrink: 0;
+}
+
+.carousel-dot:first-child {
+  background-color: rgba(var(--moss-rgb), 0.6);
+}
+
+.carousel-chrome-label {
+  margin-left: 0.6rem;
+  font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.72rem;
+  color: rgba(var(--sand-rgb), 0.55);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.carousel-shot-frame {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.carousel-image {
+  object-fit: cover;
+  object-position: top center;
+  transition: filter 0.6s ease, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* The site renders images grayscale; the focused project earns its colour. */
+.carousel-slide-active .carousel-shot-frame .carousel-image {
+  filter: grayscale(0%) sepia(0%);
+}
+
+/* Push the neighbours back so a light-coloured screenshot doesn't glare. */
+.carousel-slide:not(.carousel-slide-active) .carousel-shot {
+  filter: brightness(0.55) contrast(0.92) sepia(0.25);
+}
+
+.carousel-slide-active .carousel-shot:hover .carousel-image {
+  transform: scale(1.03);
+}
+
+/* Light sweep that crosses the active screenshot after it settles */
+.carousel-sheen {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 35%,
+    rgba(var(--sand-rgb), 0.16) 48%,
+    transparent 62%
+  );
+  transform: translateX(-120%);
+  pointer-events: none;
+}
+
+.carousel-slide-active .carousel-sheen {
+  animation: sheenSweep 1.5s cubic-bezier(0.22, 1, 0.36, 1) 0.25s;
+}
+
+@keyframes sheenSweep {
+  from { transform: translateX(-120%); }
+  to { transform: translateX(120%); }
+}
+
+.carousel-body {
+  margin-top: 2.25rem;
+  text-align: center;
+  animation: carouselBodyIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes carouselBodyIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.carousel-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  margin: 0 0 0.75rem;
+  color: var(--heading);
+}
+
+.carousel-tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+  margin: 0 0 0.9rem;
+  padding: 0;
+}
+
+.carousel-tag {
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  color: var(--moss-200);
+  background-color: rgba(var(--moss-rgb), 0.12);
+  border: 1px solid rgba(var(--moss-rgb), 0.3);
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+}
+
+.carousel-description {
+  max-width: 38rem;
+  margin: 0 auto 1.25rem;
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.carousel-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+/* Controls */
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.carousel-arrow {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--text);
+  background-color: rgba(var(--sand-rgb), 0.06);
+  border: 1px solid rgba(var(--sand-rgb), 0.22);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.carousel-arrow:hover {
+  background-color: rgba(var(--moss-rgb), 0.2);
+  border-color: rgba(var(--moss-rgb), 0.5);
+  color: var(--moss-200);
+  transform: translateY(-2px);
+}
+
+.carousel-dots {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.carousel-pip {
+  width: 2.5rem;
+  height: 0.3rem;
+  padding: 0;
+  background-color: rgba(var(--sand-rgb), 0.2);
+  border: none;
+  border-radius: 999px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: background-color 0.25s ease, width 0.35s ease;
+}
+
+.carousel-pip:hover {
+  background-color: rgba(var(--sand-rgb), 0.4);
+}
+
+.carousel-pip-active {
+  width: 3.75rem;
+  background-color: rgba(var(--sand-rgb), 0.25);
+}
+
+.carousel-pip-fill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--moss-400);
+  transform-origin: left center;
+  transform: scaleX(0);
+}
+
+.carousel-pip-active .carousel-pip-fill {
+  transform: scaleX(1);
+}
+
+/* Drains in step with autoplay so the next move is never a surprise. */
+.carousel-pip-timer {
+  animation: pipTimer 7s linear forwards;
+}
+
+@keyframes pipTimer {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+.carousel-counter {
+  margin-top: 1.25rem;
+  text-align: center;
+  font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.8rem;
+  color: rgba(var(--sand-rgb), 0.4);
+}
+
+.carousel-counter-current {
+  color: var(--moss-200);
+}
+
+.carousel-counter-divider {
+  margin: 0 0.4rem;
+}
+
+@media (max-width: 767px) {
+  .carousel {
+    --card-width: 92vw;
+  }
+
+  .carousel-stage {
+    perspective: 1200px;
+    /* Only one card shows here, and it reaches the fade — so drop the mask. */
+    mask-image: none;
+  }
+
+  /* Neighbours peek rather than crowd on a narrow screen. */
+  .carousel-slide:not(.carousel-slide-active) {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .carousel-controls {
+    gap: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-slide {
+    transition: opacity 0.3s ease;
+    transform: translateX(calc(var(--offset) * 52%));
+    filter: none;
+  }
+
+  .carousel-slide:not(.carousel-slide-active) {
+    opacity: 0;
+  }
+
+  .carousel-sheen,
+  .carousel-pip-timer,
+  .carousel-body {
+    animation: none;
+  }
+
+  .carousel-image {
+    transition: none;
+  }
 }

@@ -1,16 +1,16 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
+import coreWebVitals from "eslint-config-next/core-web-vitals";
+import typescript from "eslint-config-next/typescript";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
+// eslint-config-next 16 ships native flat configs, so they are spread directly
+// rather than wrapped in FlatCompat.
 const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
+  {
+    // `next lint` used to scan only source dirs; linting the repo root means
+    // build output and scratch worktrees have to be excluded explicitly.
+    ignores: ["**/.next/**", "**/out/**", "**/node_modules/**", ".claude/**"],
+  },
+  ...coreWebVitals,
+  ...typescript,
 ];
 
 export default eslintConfig;

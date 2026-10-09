@@ -1,20 +1,21 @@
 'use client';
 
 import Image from 'next/image';
-import ProjectCarousel from '@/components/ProjectCarousel';
+import ProjectCarousel, { Project } from '@/components/ProjectCarousel';
 import ResumeViewer from '@/components/ResumeViewer';
+import TypewriterIntro from '@/components/TypewriterIntro';
 import Link from 'next/link';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import './components.css';
 import React, { useState } from 'react';
 
-interface Project {
-  title: string;
-  description: string;
-  repoLink: string;
-  liveLink?: string;
-  image: string;
-}
+const INTERESTS = [
+  'data-driven products',
+  'AI-enabled experiences',
+  'scalable application systems',
+  'cloud and data infrastructure',
+  'tools for real-world problems',
+];
 
 export default function Home() {
   const { elementRef: introRef, isVisible: introVisible } = useScrollAnimation();
@@ -32,19 +33,28 @@ export default function Home() {
       description: "AI-enabled pilot logbook and operations dashboard for flight tracking, trip management, and aviation workflows.",
       repoLink: "https://github.com/codebypranav/AirFleet",
       liveLink: "https://airfleet.vercel.app/",
-      image: "/airfleet-preview.jpg"
+      image: "/project-airfleet.jpg",
+      shotLabel: "airfleet.vercel.app",
+      shotAlt: "AirFleet landing page: 'Every flight, in one place', with log, photograph and debrief steps.",
+      tags: ["Next.js", "Django REST", "TypeScript", "Applied AI"]
     },
     {
       title: "ExplorAItion",
       description: "AI-powered travel planning app that turns preferences and historical trip data into personalized itinerary recommendations.",
       repoLink: "https://github.com/codebypranav/ExplorAItion",
-      image: "/resume-preview.png"
+      image: "/project-exploraition.jpg",
+      shotLabel: "exploraition — semantic search",
+      shotAlt: "ExplorAItion search results for a Paris trip, ranked by match score beside a map of the city.",
+      tags: ["Go", "Fiber", "Pinecone", "OpenAI", "Next.js"]
     },
     {
       title: "WasteWise",
       description: "Smart waste monitoring platform with analytics, threshold alerts, and computer-vision-based classification workflows.",
       repoLink: "https://github.com/codebypranav/WasteWise",
-      image: "/resume-preview.png"
+      image: "/project-wastewise.jpg",
+      shotLabel: "wastewise — system alerts",
+      shotAlt: "WasteWise alerts dashboard listing bin capacity, temperature and sensor events by location.",
+      tags: ["Python", "Flask", "React", "SQLite", "EfficientNet"]
     }
   ];
 
@@ -58,6 +68,11 @@ export default function Home() {
   return (
     <main className="main-container">
       <div className="main-inner">
+        {/* Typed interests line */}
+        <div className="animate-on-load">
+          <TypewriterIntro prefix="I build" phrases={INTERESTS} />
+        </div>
+
         {/* Introduction Section */}
         <section id="home" className="intro-section animate-on-load">
           <div
