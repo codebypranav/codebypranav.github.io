@@ -20,6 +20,9 @@
 # production
 /build
 
+# claude code scratch worktrees (build output of other sessions)
+.claude/worktrees/
+
 # misc
 .DS_Store
 *.pem

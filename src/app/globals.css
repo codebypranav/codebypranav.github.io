@@ -2,33 +2,84 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background-image: url('/broadmuseum.JPG');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  color: #ffffff;
+/*
+ * Earth palette. Channel triplets are exposed separately so existing
+ * translucency can stay expressive — rgba(var(--sand-rgb), 0.2) and friends.
+ */
+:root {
+  --ink-rgb: 15, 13, 10;        /* deep bark, stands in for black */
+  --sand-rgb: 226, 209, 182;    /* warm neutral, stands in for white */
+  --moss-rgb: 133, 160, 92;     /* accent */
+
+  --earth-950: #0f0d0a;
+  --earth-900: #15120e;
+  --earth-800: #241e18;
+  --earth-700: #30281f;
+
+  --sand-50: #f6f1e8;
+  --sand-100: #ede4d6;
+  --sand-300: #d3c3aa;
+  --sand-500: #ac9a80;
+
+  --moss-200: #c3d4a4;
+  --moss-400: #9cb474;
+  --moss-500: #85a05c;
+  --moss-700: #566b38;
+
+  --text: var(--sand-100);
+  --text-muted: var(--sand-300);
+  --text-dim: var(--sand-500);
+  --accent: var(--moss-400);
+  --heading: var(--moss-200);
+  --accent-ink: #141109;
+
+  --line: rgba(var(--sand-rgb), 0.18);
+  --line-strong: rgba(var(--sand-rgb), 0.32);
+
+  --wood: url('/wood-grain.png');
+  --wood-size: 620px;
 }
 
+body {
+  /* Declared here, not on :root — next/font puts --font-geist-mono on <body>,
+     so the inner var() only resolves at this level and below. */
+  --font-heading: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo,
+    monospace;
+  background-color: var(--earth-950);
+  color: var(--text);
+}
+
+/* Fixed photographic ground, pushed from grey into warm bark tones. */
 body::before {
   content: "";
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: inherit;
-  background-size: inherit;
-  background-position: inherit;
-  background-attachment: inherit;
-  background-repeat: inherit;
-  filter: grayscale(100%);
+  inset: 0;
+  background-image: url('/broadmuseum.JPG');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: grayscale(100%) sepia(65%) saturate(150%) hue-rotate(-8deg)
+    brightness(0.4) contrast(0.92);
+  z-index: -1;
+}
+
+/* Settle the edges so the photograph never competes with the text. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+    120% 90% at 50% 35%,
+    transparent 30%,
+    rgba(var(--ink-rgb), 0.55) 100%
+  );
+  pointer-events: none;
   z-index: -1;
 }
 
 img:not(.profile-image) {
-  filter: grayscale(100%);
+  /* Warm desaturation rather than flat grey, so photos sit in the palette. */
+  filter: grayscale(100%) sepia(32%) saturate(135%) hue-rotate(-6deg);
 }
 
 .profile-image {
@@ -36,13 +87,41 @@ img:not(.profile-image) {
 }
 
 .content-wrapper {
-  background-color: rgba(0, 0, 0, 0.85);
+  /* Warm scrim over the photograph — translucent so the ground still reads. */
+  background-image: linear-gradient(
+    180deg,
+    rgba(var(--ink-rgb), 0.86) 0%,
+    rgba(32, 26, 20, 0.8) 45%,
+    rgba(var(--ink-rgb), 0.89) 100%
+  );
   min-height: 100vh;
   width: 100%;
   position: relative;
 }
 
+/* Grain sits above the scrim as its own layer, where its weight is tunable. */
+.content-wrapper::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: var(--wood);
+  background-size: var(--wood-size) auto;
+  background-repeat: repeat;
+  opacity: 0.055;
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Keep page content above the grain layer. */
+.content-wrapper > nav,
+.content-wrapper > main {
+  position: relative;
+  z-index: 1;
+}
+
 nav {
-  background-color: rgba(0, 0, 0, 0.95) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(var(--ink-rgb), 0.9) !important;
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
 }
