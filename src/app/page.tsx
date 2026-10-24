@@ -3,19 +3,10 @@
 import Image from 'next/image';
 import ProjectCarousel, { Project } from '@/components/ProjectCarousel';
 import ResumeViewer from '@/components/ResumeViewer';
-import TypewriterIntro from '@/components/TypewriterIntro';
 import Link from 'next/link';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import './components.css';
 import React, { useState } from 'react';
-
-const INTERESTS = [
-  'data-driven products',
-  'AI-enabled experiences',
-  'scalable application systems',
-  'cloud and data infrastructure',
-  'tools for real-world problems',
-];
 
 export default function Home() {
   const { elementRef: introRef, isVisible: introVisible } = useScrollAnimation();
@@ -68,11 +59,6 @@ export default function Home() {
   return (
     <main className="main-container">
       <div className="main-inner">
-        {/* Typed interests line */}
-        <div className="animate-on-load">
-          <TypewriterIntro prefix="I build" phrases={INTERESTS} />
-        </div>
-
         {/* Introduction Section */}
         <section id="home" className="intro-section animate-on-load">
           <div
