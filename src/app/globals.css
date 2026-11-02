@@ -113,6 +113,41 @@ img:not(.profile-image) {
   z-index: 0;
 }
 
+@media (hover: hover) and (pointer: fine) {
+  .content-wrapper::after {
+    content: "";
+    position: fixed;
+    top: -180px;
+    left: -180px;
+    width: 360px;
+    height: 360px;
+    background: radial-gradient(
+      closest-side,
+      rgba(var(--sand-rgb), 0.07),
+      transparent
+    );
+    mix-blend-mode: screen;
+    translate: var(--mx, 50vw) var(--my, 50vh);
+    opacity: 0;
+    transition: translate 150ms ease-out, opacity 300ms ease;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  [data-pointer] .content-wrapper::after {
+    opacity: 1;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  body::before {
+    scale: 1.05;
+    translate: clamp(-15px, calc((50vw - var(--mx, 50vw)) * 0.03), 15px)
+      clamp(-15px, calc((50vh - var(--my, 50vh)) * 0.03), 15px);
+    transition: translate 400ms ease-out;
+  }
+}
+
 /* Keep page content above the grain layer. */
 .content-wrapper > nav,
 .content-wrapper > main {
