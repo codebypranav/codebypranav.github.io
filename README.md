@@ -17,7 +17,7 @@ The app uses the App Router pattern in Next.js and is optimized for both local d
 ## Technical architecture
 
 ### Frontend stack
-- Next.js 15
+- Next.js 16
 - React 19
 - TypeScript
 - Tailwind CSS
@@ -27,6 +27,7 @@ The app uses the App Router pattern in Next.js and is optimized for both local d
 ### App composition
 - `src/app/page.tsx` renders the homepage sections and project content
 - `src/components/Navigation.tsx` contains the header navigation and section scrolling
+- `src/components/PointerGlow.tsx` tracks the mouse for the cursor glow and photo parallax in `src/app/globals.css`
 - `src/components/ProjectCarousel.tsx` handles the project tile carousel experience
 - `src/components/ResumeViewer.tsx` embeds the PDF resume and provides download access
 - `src/hooks/useScrollAnimation.ts` adds lightweight animation behavior for reveal effects
@@ -54,6 +55,7 @@ src/
     page.tsx
   components/
     Navigation.tsx
+    PointerGlow.tsx
     ProjectCarousel.tsx
     ResumeViewer.tsx
   hooks/
