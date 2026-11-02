@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Navigation from "@/components/Navigation";
+import PointerGlow from "@/components/PointerGlow";
 import "./globals.css";
 import "./components.css";
 
@@ -27,6 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <PointerGlow />
         <div className="content-wrapper">
           <Navigation />
           <main>
