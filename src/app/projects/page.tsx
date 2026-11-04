@@ -7,7 +7,7 @@ export const metadata: Metadata = { title: 'Projects | Pranav Shukla' };
 const projects = [
   {
     title: 'AirFleet',
-    description: 'AI-enabled pilot logbook and operations dashboard for flight tracking, trip management, and aviation workflows.',
+    description: 'Flight simming and a love of aviation led me to build this AI-enabled pilot logbook and operations dashboard for flight tracking, trip management, and aviation workflows.',
     repoLink: 'https://github.com/codebypranav/AirFleet',
     liveLink: 'https://airfleet.vercel.app/',
     image: '/project-airfleet.jpg',
@@ -16,7 +16,7 @@ const projects = [
   },
   {
     title: 'ExplorAItion',
-    description: 'AI-powered travel planning app that turns preferences and historical trip data into personalized itinerary recommendations.',
+    description: 'My travels led me to build this AI-powered travel planning app, which turns preferences and historical trip data into personalized itinerary recommendations.',
     repoLink: 'https://github.com/codebypranav/ExplorAItion',
     image: '/project-exploraition.jpg',
     shotAlt: 'ExplorAItion search results for a Paris trip, ranked by match score beside a map of the city.',
@@ -24,7 +24,7 @@ const projects = [
   },
   {
     title: 'WasteWise',
-    description: 'Smart waste monitoring platform with analytics, threshold alerts, and computer-vision-based classification workflows.',
+    description: 'Built for SpartaHack X: a smart waste monitoring platform with analytics, threshold alerts, and computer-vision-based classification workflows.',
     repoLink: 'https://github.com/codebypranav/WasteWise',
     image: '/project-wastewise.jpg',
     shotAlt: 'WasteWise alerts dashboard listing bin capacity, temperature and sensor events by location.',

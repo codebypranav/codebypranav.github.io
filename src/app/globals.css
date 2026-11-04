@@ -27,14 +27,39 @@ body {
   min-height: 100dvh;
   background: var(--ground);
   color: var(--text);
-  font-family: var(--font-geist-mono), ui-monospace, monospace;
-  font-size: .875rem;
+  font-family: var(--font-newsreader), Georgia, serif;
+  font-size: 1.0625rem;
   line-height: 1.6;
   transition: background-color .4s var(--ease), color .4s var(--ease);
 }
 
 @media (min-width: 640px) {
   body {
+    font-size: 1.125rem;
+  }
+}
+
+.nav,
+.project-tags,
+.project-links,
+.resume-links,
+.contact-links,
+.contact-status,
+.contact-clock,
+.flight-time {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+.project-links,
+.resume-links,
+.contact-links {
+  font-size: .875rem;
+}
+
+@media (min-width: 640px) {
+  .project-links,
+  .resume-links,
+  .contact-links {
     font-size: .9375rem;
   }
 }
@@ -65,7 +90,7 @@ body {
 @media (min-width: 640px) {
   .nav {
     gap: .25rem 1rem;
-    font-size: inherit;
+    font-size: .9375rem;
   }
 }
 
@@ -214,7 +239,8 @@ body {
   font-size: .8125rem;
 }
 
-.contact-clock {
+.contact-clock,
+.flight-time {
   margin-top: 1.5rem;
   color: var(--dim);
   font-size: .8125rem;
