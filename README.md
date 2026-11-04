@@ -1,16 +1,10 @@
 # Pranav Shukla Portfolio
 
-A personal portfolio and project showcase built with Next.js and deployed as a static site for GitHub Pages. The project is designed to present software engineering work, project architecture, resume access, and contact information in a polished single-page experience.
+A personal portfolio and project showcase built with Next.js and deployed as a static site for GitHub Pages. The project is designed to present software engineering work, resume access, and contact information across four plain pages.
 
 ## Overview
 
-This portfolio application is a personal landing page and engineering showcase. It emphasizes:
-
-- a responsive, animated landing page
-- curated project highlights and case studies
-- a technical background and experience section
-- embedded resume viewing and PDF download
-- reusable UI components with a lightweight static-export build
+A personal site with four plain pages: home, projects, resume and contact, in one narrow column of monospace text.
 
 The app uses the App Router pattern in Next.js and is optimized for both local development and static hosting.
 
@@ -20,17 +14,13 @@ The app uses the App Router pattern in Next.js and is optimized for both local d
 - Next.js 16
 - React 19
 - TypeScript
-- Tailwind CSS
-- Custom `useScrollAnimation` hook for scroll-driven motion
-- Component-driven layout using `src/app` and `src/components`
+- Tailwind CSS base reset, with the styles in `src/app/globals.css`
 
 ### App composition
-- `src/app/page.tsx` renders the homepage sections and project content
-- `src/components/Navigation.tsx` contains the header navigation and section scrolling
-- `src/components/PointerGlow.tsx` tracks the mouse for the cursor glow and photo parallax in `src/app/globals.css`
-- `src/components/ProjectCarousel.tsx` handles the project tile carousel experience
-- `src/components/ResumeViewer.tsx` embeds the PDF resume and provides download access
-- `src/hooks/useScrollAnimation.ts` adds lightweight animation behavior for reveal effects
+- `src/app/layout.tsx` renders the top bar and applies the stored or system theme before first paint
+- `src/app/page.tsx`, `src/app/projects/page.tsx`, `src/app/resume/page.tsx` and `src/app/contact/page.tsx` are the four pages
+- `src/components/Navigation.tsx` contains the top bar and theme toggle
+- `src/components/Contact.tsx` contains the email copy button, contact links and Ann Arbor clock
 
 ### Deployment model
 The site is configured as a static export-friendly Next.js application. It is built with a production bundle and published via GitHub Pages using `gh-pages`.
@@ -50,16 +40,15 @@ This makes the site suitable for a static hosting platform while keeping the sou
 ```text
 src/
   app/
+    contact/page.tsx
+    projects/page.tsx
+    resume/page.tsx
     globals.css
     layout.tsx
     page.tsx
   components/
+    Contact.tsx
     Navigation.tsx
-    PointerGlow.tsx
-    ProjectCarousel.tsx
-    ResumeViewer.tsx
-  hooks/
-    useScrollAnimation.ts
 public/
   Pranav_Shukla.pdf
 ```
