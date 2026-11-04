@@ -4,7 +4,7 @@ export default function Home() {
       <h1 className="sr-only">Pranav Shukla</h1>
       <div className="prose">
         <p>
-          Hi! I&apos;m Pranav, a software engineer at{' '}
+          Hi! I&apos;m Pranav! I&apos;m a software engineer at{' '}
           <a href="https://www.ford.com/" target="_blank" rel="noopener noreferrer" className="link">Ford</a>
           {' '}building full-stack analytics and agentic AI tools for manufacturing plants.
         </p>
