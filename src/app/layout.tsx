@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
-import { Geist_Mono } from "next/font/google";
+import { Geist_Mono, Newsreader } from "next/font/google";
 import Navigation from "@/components/Navigation";
 import "./globals.css";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+  display: "optional",
+});
+
+const newsreader = Newsreader({
+  variable: "--font-newsreader",
   subsets: ["latin"],
   display: "optional",
 });
@@ -23,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistMono.variable} antialiased`}>
+      <body className={`${geistMono.variable} ${newsreader.variable} antialiased`}>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <Navigation />
         <main className="page">{children}</main>

@@ -4,7 +4,7 @@ A personal portfolio and project showcase built with Next.js and deployed as a s
 
 ## Overview
 
-A personal site with four plain pages: home, projects, resume and contact, in one narrow column of monospace text.
+A personal site with four plain pages: home, projects, resume and contact, in one narrow column of serif text with monospace details.
 
 The app uses the App Router pattern in Next.js and is optimized for both local development and static hosting.
 
