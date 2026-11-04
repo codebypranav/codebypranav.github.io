@@ -1,18 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist_Mono } from "next/font/google";
 import Navigation from "@/components/Navigation";
-import PointerGlow from "@/components/PointerGlow";
 import "./globals.css";
-import "./components.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "optional",
 });
 
 export const metadata: Metadata = {
@@ -20,21 +14,19 @@ export const metadata: Metadata = {
   description: "Personal portfolio and projects by Pranav Shukla",
 };
 
+const themeScript = `(()=>{const r=document.documentElement;let t;try{t=localStorage.getItem('theme')}catch{}r.dataset.theme=t||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark')})()`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <PointerGlow />
-        <div className="content-wrapper">
-          <Navigation />
-          <main>
-            {children}
-          </main>
-        </div>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${geistMono.variable} antialiased`}>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <Navigation />
+        <main className="page">{children}</main>
       </body>
     </html>
   );
