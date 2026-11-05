@@ -11,7 +11,7 @@ export default function Home() {
           . Currently, I&apos;m drawn to manufacturing, robotics, energy, and practical AI.
         </p>
         <p>
-          Outside of work, I love to travel, take photos, play video games, and listen to music. I&apos;m also an aviation enthusiast: I log a lot of simulated flight hours and hope to earn my PPL someday. I also never say no to (high quality) chocolate.
+          Outside of work, I love to travel, read, run, take photos, play video games, and listen to music. I&apos;m also an aviation enthusiast: I log a lot of simulated flight hours and hope to earn my PPL someday. I also never say no to (high quality) chocolate.
         </p>
       </div>
       <p className="flight-time">total flight time: 0.0&nbsp;hrs · msfs 2020: 779.1&nbsp;hrs · ppl: someday</p>
