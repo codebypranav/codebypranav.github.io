@@ -45,7 +45,7 @@ body {
 .resume-links,
 .contact-links,
 .contact-status,
-.contact-clock,
+.site-clock,
 .flight-time {
   font-family: var(--font-geist-mono), ui-monospace, monospace;
 }
@@ -70,7 +70,8 @@ body {
 }
 
 .nav,
-.page {
+.page,
+.site-clock {
   width: 100%;
   max-width: 42rem;
   margin-inline: auto;
@@ -239,14 +240,21 @@ body {
   font-size: .8125rem;
 }
 
-.contact-clock,
 .flight-time {
   margin-top: 1.5rem;
+}
+
+.site-clock {
+  padding-bottom: 1.5rem;
+}
+
+.site-clock,
+.flight-time {
   color: var(--dim);
   font-size: .8125rem;
 }
 
-.contact-clock time {
+.site-clock time {
   font-variant-numeric: tabular-nums;
 }
 

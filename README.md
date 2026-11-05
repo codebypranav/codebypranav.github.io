@@ -20,7 +20,8 @@ The app uses the App Router pattern in Next.js and is optimized for both local d
 - `src/app/layout.tsx` renders the top bar and applies the stored or system theme before first paint
 - `src/app/page.tsx`, `src/app/projects/page.tsx`, `src/app/resume/page.tsx` and `src/app/contact/page.tsx` are the four pages
 - `src/components/Navigation.tsx` contains the top bar and theme toggle
-- `src/components/Contact.tsx` contains the email copy button, contact links and Ann Arbor clock
+- `src/components/Contact.tsx` contains the email copy button and contact links
+- `src/components/Clock.tsx` contains the Ann Arbor clock shown at the bottom of every page
 
 ### Deployment model
 The site is configured as a static export-friendly Next.js application. It is built with a production bundle and published via GitHub Pages using `gh-pages`.
