@@ -7,16 +7,16 @@ export const metadata: Metadata = { title: 'Projects | Pranav Shukla' };
 const projects = [
   {
     title: 'AirFleet',
-    description: 'Flight simming and a love of aviation led me to build this AI-enabled pilot logbook and operations dashboard for flight tracking, trip management, and aviation workflows.',
+    description: 'Flight simming and a love of aviation led me to build this pilot logbook, whose AI quick log fills 20+ form fields from one plain-text sentence, validated against a 33,000-airport dataset. It also keeps tamper-evident endorsement records (SHA-256) and tracks FAA currency (FAR 61.57).',
     repoLink: 'https://github.com/codebypranav/AirFleet',
     liveLink: 'https://airfleet.vercel.app/',
     image: '/project-airfleet.jpg',
     shotAlt: "AirFleet landing page: 'Every flight, in one place', with log, photograph and debrief steps.",
-    tags: ['Next.js', 'Django REST', 'TypeScript', 'Applied AI'],
+    tags: ['Next.js', 'Django REST', 'TypeScript', 'PostgreSQL', 'Gemini'],
   },
   {
     title: 'ExplorAItion',
-    description: 'My travels led me to build this AI-powered travel planning app, which turns preferences and historical trip data into personalized itinerary recommendations.',
+    description: 'My travels led me to build this AI-powered travel planning app, which turns preferences and historical trip data into personalized itinerary recommendations. A concurrent worker pool and cache cut third-party API calls per search by ~10x.',
     repoLink: 'https://github.com/codebypranav/ExplorAItion',
     image: '/project-exploraition.jpg',
     shotAlt: 'ExplorAItion search results for a Paris trip, ranked by match score beside a map of the city.',
