@@ -11,6 +11,7 @@ const chocolates: { bar: string; maker?: string; note?: string }[] = [
   { bar: "Hershey's Milk Chocolate" },
   { bar: 'Kit Kat' },
   { bar: '3 Musketeers' },
+  { bar: "Hershey's Special Dark" },
   { bar: 'Almond Joy' },
 ];
 

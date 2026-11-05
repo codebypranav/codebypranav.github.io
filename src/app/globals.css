@@ -201,6 +201,10 @@ body {
   align-items: baseline;
 }
 
+.chocolate > .project-tags {
+  min-width: 2ch;
+}
+
 .chocolate-intro {
   margin-bottom: 1rem;
 }
