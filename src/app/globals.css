@@ -196,6 +196,15 @@ body {
   }
 }
 
+.chocolate {
+  justify-content: flex-start;
+  align-items: baseline;
+}
+
+.chocolate-intro {
+  margin-bottom: 1rem;
+}
+
 .resume {
   display: flex;
   flex: 1;
