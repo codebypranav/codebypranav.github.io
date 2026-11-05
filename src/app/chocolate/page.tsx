@@ -6,8 +6,12 @@ const chocolates: { bar: string; maker?: string; note?: string }[] = [
   { bar: 'Pure 67%', maker: 'Mindo' },
   { bar: 'Pure 77%', maker: 'Mindo' },
   { bar: '70% Oat', maker: 'Mindo' },
-  { bar: 'This one yellow fudgy chocolate' },
+  { bar: 'Holy Fudge Chocolate', maker: 'TCHO' },
   { bar: 'Vegan Chocolate 70%', maker: 'Hu' },
+  { bar: "Hershey's Milk Chocolate" },
+  { bar: 'Kit Kat' },
+  { bar: '3 Musketeers' },
+  { bar: 'Almond Joy' },
 ];
 
 export default function Chocolate() {
