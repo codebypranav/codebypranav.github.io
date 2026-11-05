@@ -1,0 +1,32 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = { title: 'Chocolate | Pranav Shukla' };
+
+const chocolates: { bar: string; maker?: string; note?: string }[] = [
+  { bar: 'Pure 67%', maker: 'Mindo' },
+  { bar: 'Pure 77%', maker: 'Mindo' },
+  { bar: '70% Oat', maker: 'Mindo' },
+  { bar: 'This one yellow fudgy chocolate' },
+  { bar: 'Vegan Chocolate 70%', maker: 'Hu' },
+];
+
+export default function Chocolate() {
+  return (
+    <>
+      <h1 className="sr-only">Chocolate</h1>
+      <p className="chocolate-intro">I tend to prefer smooth, non-rustic, dark chocolates of around 65-80% cacao.</p>
+      <ol>
+        {chocolates.map((chocolate, index) => (
+          <li key={chocolate.bar} className="project chocolate">
+            <span className="project-tags">{index + 1}</span>
+            <div>
+              <h2>{chocolate.bar}</h2>
+              {chocolate.maker && <p className="project-tags">{chocolate.maker}</p>}
+              {chocolate.note && <p>{chocolate.note}</p>}
+            </div>
+          </li>
+        ))}
+      </ol>
+    </>
+  );
+}
