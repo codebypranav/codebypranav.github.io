@@ -8,6 +8,7 @@
   --text: #ede4d6;
   --dim: #ac9a80;
   --accent: #9cb474;
+  --tan: #d8c79e;
   --line: rgba(226, 209, 182, .18);
   color-scheme: dark;
 }
@@ -17,6 +18,7 @@
   --text: #241e18;
   --dim: #6b5e4a;
   --accent: #4f6332;
+  --tan: #7d6234;
   --line: rgba(36, 30, 24, .16);
   color-scheme: light;
 }
@@ -162,6 +164,7 @@ body {
 }
 
 .project h2 {
+  color: var(--tan);
   font-weight: 500;
 }
 
