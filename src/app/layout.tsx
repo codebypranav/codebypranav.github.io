@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Newsreader } from "next/font/google";
+import Clock from "@/components/Clock";
 import Navigation from "@/components/Navigation";
 import "./globals.css";
 
@@ -33,6 +34,7 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <Navigation />
         <main className="page">{children}</main>
+        <Clock />
       </body>
     </html>
   );
