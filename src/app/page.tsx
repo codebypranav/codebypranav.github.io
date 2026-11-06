@@ -8,7 +8,7 @@ export default function Home() {
         <p>
           Hi, I&apos;m Pranav! I&apos;m a software engineer at{' '}
           <a href="https://www.ford.com/" target="_blank" rel="noopener noreferrer" className="link">Ford</a>
-          , building full-stack applications, machine learning models, and AI agents. Previously, I graduated from Michigan State University with a degree in computer science in December 2024, and interned as a SWE at{' '}
+          , building full-stack applications, machine learning models, and AI agents. Previously, I graduated from Michigan State University with a degree in Computer Science in December 2024, and interned as a SWE at{' '}
           <a href="https://www.vanguard.com/" target="_blank" rel="noopener noreferrer" className="link">Vanguard</a>
           . Currently, I&apos;m drawn to manufacturing, robotics, energy, and practical AI.
         </p>
