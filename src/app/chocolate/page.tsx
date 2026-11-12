@@ -8,11 +8,18 @@ const chocolates: { bar: string; maker?: string; note?: string }[] = [
   { bar: '70% Oat', maker: 'Mindo' },
   { bar: 'Holy Fudge Chocolate', maker: 'TCHO' },
   { bar: 'Vegan Chocolate 70%', maker: 'Hu' },
+  { bar: '60% Cacao Dark Chocolate', maker: 'Ghirardelli' },
+  { bar: 'LINDOR Dark Chocolate', maker: 'Lindt' },
+  { bar: 'LINDOR Milk Chocolate', maker: 'Lindt' },
+  { bar: 'Milk Chocolate Square', maker: 'Ghirardelli' },
   { bar: "Hershey's Milk Chocolate" },
   { bar: 'Kit Kat' },
   { bar: '3 Musketeers' },
   { bar: "Hershey's Special Dark" },
+  { bar: 'Milk Chocolate Caramel', maker: 'Ghirardelli' },
   { bar: 'Almond Joy' },
+  { bar: 'LINDOR White Chocolate', maker: 'Lindt' },
+  { bar: 'Dark Chocolate Mint', maker: 'Ghirardelli' },
 ];
 
 export default function Chocolate() {
