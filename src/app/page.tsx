@@ -10,7 +10,9 @@ export default function Home() {
           <a href="https://www.ford.com/" target="_blank" rel="noopener noreferrer" className="link">Ford</a>
           , where I build full-stack applications, machine learning models, and AI agents. I graduated from Michigan State University in December 2024 with a degree in Computer Science, after interning a few summers as a SWE at{' '}
           <a href="https://www.vanguard.com/" target="_blank" rel="noopener noreferrer" className="link">Vanguard</a>
-          . These days, I&apos;m most interested in manufacturing, robotics, energy, and practical AI.
+          . These days, I&apos;m most interested in manufacturing, robotics, energy, and practical AI. If you&apos;re working on something in those areas, or just want to swap ideas, feel free to reach out through my{' '}
+          <Link href="/contact" className="link">contact page</Link>
+          .
         </p>
         <p>
           Outside of work, I love to travel, read, run, take photos, play video games, and listen to music. I&apos;m also an aviation enthusiast: I log a lot of simulated flight hours and hope to earn my PPL someday. I also never say no to (high quality){' '}
