@@ -44,7 +44,8 @@ body {
 .nav,
 .project-tags,
 .project-links,
-.resume-links,
+.resume-actions,
+.resume-dates,
 .contact-links,
 .contact-status,
 .site-clock,
@@ -53,14 +54,14 @@ body {
 }
 
 .project-links,
-.resume-links,
+.resume-actions,
 .contact-links {
   font-size: .875rem;
 }
 
 @media (min-width: 640px) {
   .project-links,
-  .resume-links,
+  .resume-actions,
   .contact-links {
     font-size: .9375rem;
   }
@@ -137,7 +138,7 @@ body {
 }
 
 .project-links .link,
-.resume-links .link,
+.resume-actions .link,
 .contact-links .link {
   display: inline-block;
   min-height: 1.5rem;
@@ -212,29 +213,78 @@ body {
   margin-bottom: 1rem;
 }
 
-.resume {
+.resume-actions {
   display: flex;
-  flex: 1;
-  flex-direction: column;
-  min-height: 0;
-}
-
-.resume-links {
-  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
-.resume-frame {
-  flex: 1;
-  width: 100%;
-  min-height: 24rem;
-  border: 1px solid var(--line);
+.resume-download {
+  padding: .5rem 1rem;
+  border: 1px solid var(--accent);
   border-radius: .25rem;
+  color: var(--accent);
+  transition: background-color .3s var(--ease), color .3s var(--ease);
 }
 
-.resume-fallback {
-  padding: 2rem 1rem;
+.resume-download:hover {
+  background: var(--accent);
+  color: var(--ground);
+}
+
+.resume-section + .resume-section {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px dashed var(--line);
+}
+
+.resume-section h2 {
+  margin-bottom: .75rem;
+  color: var(--tan);
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.resume-entry + .resume-entry {
+  margin-top: 1.25rem;
+}
+
+.resume-entry header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0 1rem;
+}
+
+.resume-entry h3,
+.resume-section dt {
+  font-weight: 600;
+}
+
+.resume-dates,
+.resume-detail {
+  color: var(--dim);
+}
+
+.resume-dates {
+  font-size: .8125rem;
+}
+
+.resume-entry ul {
+  margin-top: .25rem;
+  padding-left: 1.125rem;
+  list-style: disc;
+}
+
+.resume-entry li::marker {
+  color: var(--dim);
+}
+
+.resume-section dl > div + div {
+  margin-top: .5rem;
 }
 
 .contact-links {
